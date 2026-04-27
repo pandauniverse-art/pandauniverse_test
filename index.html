@@ -1239,6 +1239,9 @@
     <div id="aiLabGallery" class="ai-lab-gallery"></div>
 </div>
     
+    <div id="aiLabGallery" class="ai-lab-gallery"></div>
+</div>
+    
     <div class="ai-lab-gallery">
         <img src="images/Personal/AI_source/06.gif" alt="AI Source" loading="lazy">
         <img src="images/Personal/AI_source/06_1.gif" alt="AI Source" loading="lazy">
@@ -1977,24 +1980,27 @@ function showMainTab(targetId) {
     }
 }
 
-  function showAILabTab() {
+function showAILabTab() {
         resetAllModals(); 
         
-        // 1. 기존 데이터에서 AI 소스 이미지들을 가져와서 갤러리에 꽂아넣기
         const gallery = document.getElementById('aiLabGallery');
-        gallery.innerHTML = ''; // 열 때마다 초기화
-        
-        const data = projectData['ai_source'];
-        if (data && data.images) {
-            data.images.forEach(fileName => {
-                const img = document.createElement('img');
-                img.src = `images/${data.folder}/${fileName}`; // 경로 자동 생성
-                img.alt = "AI Source";
-                gallery.appendChild(img);
-            });
+        // 에러 방지용 체크 및 이미지 불러오기
+        if (gallery) {
+            gallery.innerHTML = ''; 
+            
+            const data = projectData['ai_source'];
+            if (data && data.images) {
+                data.images.forEach(fileName => {
+                    const img = document.createElement('img');
+                    img.src = `images/${data.folder}/${fileName}`; 
+                    img.alt = "AI Source";
+                    img.loading = "lazy";
+                    gallery.appendChild(img);
+                });
+            }
         }
 
-        // 2. 화면 전환 및 맨 위로 스크롤
+        // 기존 화면 숨기고 AI Lab 화면 표시 및 맨 위로 스크롤
         document.getElementById('mainContent').style.display = 'none';
         document.getElementById('aiLabContent').style.display = 'block';
         window.scrollTo(0, 0);
