@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEE DEOK JUN | 3D Artist Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 
@@ -249,9 +252,7 @@
             letter-spacing: 1px;
         }
 
-     .ai-feature {
-    display: block;
-}
+        .ai-feature { display: block; }
 
         .ai-card {
             display: block;
@@ -300,15 +301,13 @@
             color: rgba(255,255,255,0.9);
         }
 
-               .ai-meta {
+        .ai-meta {
             margin-top: 28px;
             max-width: 100%;
             background: #080808;
             border: 1px solid #111;
             padding: 30px;
         }
-
-
 
         .ai-meta h4 {
             font-size: 0.75rem;
@@ -401,22 +400,19 @@
         }
 
         .video-box {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: #000;
-    margin-bottom: 40px;
-}
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            margin-bottom: 40px;
+        }
 
-#videoContainer.video-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+        #videoContainer.video-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-#videoContainer.video-grid-2 .video-box {
-    margin-bottom: 0;
-}
-
+        #videoContainer.video-grid-2 .video-box { margin-bottom: 0; }
 
         .project-meta {
             margin-bottom: 60px;
@@ -468,40 +464,37 @@
             color: rgba(255,255,255,0.6);
             white-space: pre-line;
         }
-            .extra-video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 14px;
-}
 
-.extra-video-item iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    display: block;
-    background: #000;
-}
+        .extra-video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 14px;
+        }
 
-.extra-video-caption {
-    margin-top: 10px;
-    font-size: 0.78rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,0.72);
-    text-transform: uppercase;
-}
+        .extra-video-item iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            display: block;
+            background: #000;
+        }
 
+        .extra-video-caption {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.72);
+            text-transform: uppercase;
+        }
 
-
-
-       .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    grid-auto-flow: dense;
-}
-
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            grid-auto-flow: dense;
+        }
 
         .image-grid img {
             width: 100%;
@@ -537,150 +530,145 @@
             letter-spacing: -1.5px;
             margin-bottom: 10px;
         }
+
         .about-links {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
             margin: 24px 0 40px;
         }
-        .featured-proof {
-    margin: 18px 0 42px;
-}
 
-.featured-proof-title {
-    font-size: 0.78rem;
-    color: var(--accent-color);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    font-weight: 400;
-}
+        .featured-proof { margin: 18px 0 42px; }
 
-.featured-proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
+        .featured-proof-title {
+            font-size: 0.78rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 400;
+        }
 
-.featured-proof-card {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    background: rgba(10,10,10,1);
-    border: 1px solid rgba(255,255,255,0.08);
-    overflow: hidden;
-    transition: 0.3s ease;
-}
+        .featured-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
 
-.featured-proof-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.24);
-}
+        .featured-proof-card {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(10,10,10,1);
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
 
-.featured-proof-thumb {
-    position: relative;
-    overflow: hidden;
-    background: #111;
-}
+        .featured-proof-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.24);
+        }
 
-.featured-proof-thumb img {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.45s ease;
-    background: #111;
-}
+        .featured-proof-thumb {
+            position: relative;
+            overflow: hidden;
+            background: #111;
+        }
 
-.featured-proof-card:hover .featured-proof-thumb img {
-    transform: scale(1.04);
-}
+        .featured-proof-thumb img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s ease;
+            background: #111;
+        }
 
-.featured-proof-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.92) 0%,
-        rgba(0,0,0,0.7) 42%,
-        rgba(0,0,0,0.15) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+        .featured-proof-card:hover .featured-proof-thumb img {
+            transform: scale(1.04);
+        }
 
-.featured-proof-card:hover .featured-proof-overlay {
-    opacity: 1;
-}
+        .featured-proof-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.92) 0%,
+                rgba(0,0,0,0.7) 42%,
+                rgba(0,0,0,0.15) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.featured-proof-badge {
-    font-size: 0.68rem;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.58);
-    margin-bottom: 10px;
-}
+        .featured-proof-card:hover .featured-proof-overlay { opacity: 1; }
 
-.featured-proof-overlay h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.35;
-    margin-bottom: 10px;
-    color: #fff;
-}
+        .featured-proof-badge {
+            font-size: 0.68rem;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.58);
+            margin-bottom: 10px;
+        }
 
-.featured-proof-overlay p {
-    font-size: 0.84rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.84);
-    font-weight: 300;
-    margin-bottom: 12px;
-}
+        .featured-proof-overlay h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.35;
+            margin-bottom: 10px;
+            color: #fff;
+        }
 
-.featured-proof-meta-list {
-    list-style: none;
-    margin: 0 0 14px 0;
-    padding: 0;
-}
+        .featured-proof-overlay p {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.84);
+            font-weight: 300;
+            margin-bottom: 12px;
+        }
 
-.featured-proof-meta-list li {
-    font-size: 0.76rem;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.76);
-    margin-bottom: 4px;
-    font-weight: 300;
-}
+        .featured-proof-meta-list {
+            list-style: none;
+            margin: 0 0 14px 0;
+            padding: 0;
+        }
 
-.featured-proof-cta {
-    font-size: 0.76rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.94);
-}
+        .featured-proof-meta-list li {
+            font-size: 0.76rem;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.76);
+            margin-bottom: 4px;
+            font-weight: 300;
+        }
 
-.featured-proof-body {
-    padding: 16px 16px 18px;
-}
+        .featured-proof-cta {
+            font-size: 0.76rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.94);
+        }
 
-.featured-proof-label {
-    font-size: 0.72rem;
-    color: var(--accent-color);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
+        .featured-proof-body { padding: 16px 16px 18px; }
 
-.featured-proof-body h3 {
-    font-size: 0.98rem;
-    font-weight: 400;
-    line-height: 1.45;
-    color: #fff;
-}
+        .featured-proof-label {
+            font-size: 0.72rem;
+            color: var(--accent-color);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
+        .featured-proof-body h3 {
+            font-size: 0.98rem;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #fff;
+        }
 
         .about-link,
         .works-link,
@@ -719,125 +707,113 @@
             gap: 12px;
             flex-wrap: wrap;
         }
-.ai-card-stack {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px;
-    align-items: start;
-}
 
+        .ai-card-stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            align-items: start;
+        }
 
-.ai-thumb {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: #111;
-}
+        .ai-thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: #111;
+        }
 
-.interactive-thumb {
-    object-position: center 20%;
-}
+        .interactive-thumb { object-position: center 20%; }
 
-.interactive-card-thumb {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
+        .interactive-card-thumb {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
 
-.interactive-card-thumb .ai-thumb {
-    margin-bottom: 0;
-    display: block;
-    width: 100%;
-    transition: transform 0.45s ease;
-}
+        .interactive-card-thumb .ai-thumb {
+            margin-bottom: 0;
+            display: block;
+            width: 100%;
+            transition: transform 0.45s ease;
+        }
 
-.interactive-card:hover .interactive-card-thumb .ai-thumb {
-    transform: scale(1.04);
-}
+        .interactive-card:hover .interactive-card-thumb .ai-thumb {
+            transform: scale(1.04);
+        }
 
-.interactive-card-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.95) 0%,
-        rgba(0,0,0,0.65) 45%,
-        rgba(0,0,0,0.1) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+        .interactive-card-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.95) 0%,
+                rgba(0,0,0,0.65) 45%,
+                rgba(0,0,0,0.1) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.interactive-card:hover .interactive-card-overlay {
-    opacity: 1;
-}
+        .interactive-card:hover .interactive-card-overlay { opacity: 1; }
 
-.interactive-card-overlay .ic-desc {
-    font-size: 0.84rem;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 12px;
-}
+        .interactive-card-overlay .ic-desc {
+            font-size: 0.84rem;
+            font-weight: 300;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 12px;
+        }
 
-.interactive-card-overlay .ic-tags {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
+        .interactive-card-overlay .ic-tags {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
 
-.interactive-card-overlay .ic-tags li {
-    font-size: 0.68rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 3px 8px;
-}
+        .interactive-card-overlay .ic-tags li {
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 3px 8px;
+        }
 
-
-
-
-              @media (max-width: 768px) {
-                  .featured-proof-grid {
-    grid-template-columns: 1fr;
-}
-
-.featured-proof-overlay {
-    opacity: 1;
-}
-
-    :root { --h1-size: 1.8rem; }
-    .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
-    .close-btn { right: 20px; }
-    nav { padding: 24px 20px; gap: 18px; }
-    section { padding: 80px 20px; }
-    .ai-modal-frame { height: 70vh; }
-    .ai-card-stack {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-     .extra-video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    #videoContainer.video-grid-2 {
-        grid-template-columns: 1fr;
-    }
-}
-
-
+        @media (max-width: 768px) {
+            .featured-proof-grid { grid-template-columns: 1fr; }
+            .featured-proof-overlay { opacity: 1; }
+            :root { --h1-size: 1.8rem; }
+            .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
+            .close-btn { right: 20px; }
+            nav { padding: 24px 20px; gap: 18px; }
+            section { padding: 80px 20px; }
+            .ai-modal-frame { height: 70vh; }
+            .ai-card-stack { grid-template-columns: 1fr; gap: 16px; }
+            .extra-video-grid { grid-template-columns: 1fr; }
+            #videoContainer.video-grid-2 { grid-template-columns: 1fr; }
+        }
+        
+        /* AI Lab 자체 스타일링 (캐시 방지용 하드코딩) */
+        #aiLabGallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.5s ease;
+        }
+        #aiLabGallery img:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
@@ -848,413 +824,388 @@
     <a href="javascript:void(0)" onclick="showMainTab('ai')">AI</a>
     <a href="javascript:void(0)" onclick="showAILabTab()" style="color: var(--accent-color);">AI Lab</a>
     <a href="javascript:void(0)" onclick="showMainTab('experience')">Experience</a>
-    <a href="#contact" onclick="showMainTab('contact')">Contact</a>
+    <a href="javascript:void(0)" onclick="showMainTab('contact')">Contact</a>
 </nav>
+
 <div id="mainContent">
-<section class="hero">
-    <div class="hero-video-container">
-        <iframe src="https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&mute=1&loop=1&playlist=7qYDcnBwBlo&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
-        <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-        <h1>LEE DEOK JUN</h1>
-        <p>3D Motion & Media Artist</p>
-        <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
-    </div>
-</section>
+    <section class="hero">
+        <div class="hero-video-container">
+            <iframe src="https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&mute=1&loop=1&playlist=7qYDcnBwBlo&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>LEE DEOK JUN</h1>
+            <p>3D Motion & Media Artist</p>
+            <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
+        </div>
+    </section>
 
-<section id="about" style="background: #050505;">
-    <h2>ABOUT</h2>
+    <section id="about" style="background: #050505;">
+        <h2>ABOUT</h2>
 
-    <div class="about-intro">
-        <p>
-            안녕하세요. 3D Motion, Media Art, AI 기반 비주얼 워크플로우를 활용해
-            상업 프로젝트와 개인 작업을 확장하고 있는 이덕준입니다.
-            Cinema 4D, Unreal Engine, Render 파이프라인, AI 도구를 연결해
-            몰입감 있는 시각 경험을 제작합니다.
-        </p>
-    </div>
- 
-<div class="featured-proof">
-    <div class="featured-proof-title">Featured Credentials</div>
+        <div class="about-intro">
+            <p>
+                안녕하세요. 3D Motion, Media Art, AI 기반 비주얼 워크플로우를 활용해
+                상업 프로젝트와 개인 작업을 확장하고 있는 이덕준입니다.
+                Cinema 4D, Unreal Engine, Render 파이프라인, AI 도구를 연결해
+                몰입감 있는 시각 경험을 제작합니다.
+            </p>
+        </div>
+     
+        <div class="featured-proof">
+            <div class="featured-proof-title">Featured Credentials</div>
 
-    <div class="featured-proof-grid">
-        <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">Book Publication</div>
-                    <h4>CINEMA 4D & OctaneRender</h4>
-                    <p>기초부터 마스터하는 3D 렌더링 가이드</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>저자: 이덕준</li>
-                        <li>출간일: 2024.11.15</li>
-                        <li>평점 10.0 · 리뷰 8건</li>
-                        <li>세종도서 우수도서 선정</li>
-                    </ul>
-                    <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+            <div class="featured-proof-grid">
+                <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
+                    <div class="featured-proof-thumb">
+                        <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
+                        <div class="featured-proof-overlay">
+                            <div class="featured-proof-badge">Book Publication</div>
+                            <h4>CINEMA 4D & OctaneRender</h4>
+                            <p>기초부터 마스터하는 3D 렌더링 가이드</p>
+                            <ul class="featured-proof-meta-list">
+                                <li>저자: 이덕준</li>
+                                <li>출간일: 2024.11.15</li>
+                                <li>평점 10.0 · 리뷰 8건</li>
+                                <li>세종도서 우수도서 선정</li>
+                            </ul>
+                            <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+                        </div>
+                    </div>
+                    <div class="featured-proof-body">
+                        <div class="featured-proof-label">Book Publication</div>
+                        <h3>CINEMA 4D & OctaneRender</h3>
+                    </div>
+                </a>
+
+                <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
+                    <div class="featured-proof-thumb">
+                        <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
+                        <div class="featured-proof-overlay">
+                            <div class="featured-proof-badge">Lecture / Inflearn</div>
+                            <h4>Cinema 4D의 기초</h4>
+                            <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
+                            <ul class="featured-proof-meta-list">
+                                <li>평점 4.9 · 수강평 19개</li>
+                                <li>수강생 2,122명</li>
+                                <li>강사: 판다유니버스</li>
+                                <li>태그: Cinema 4D</li>
+                            </ul>
+                            <span class="featured-proof-cta">강의 보러가기 ↗</span>
+                        </div>
+                    </div>
+                    <div class="featured-proof-body">
+                        <div class="featured-proof-label">Lecture / Inflearn</div>
+                        <h3>Cinema 4D Basic Class</h3>
+                    </div>
+                </a>
+
+                <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
+                    <div class="featured-proof-thumb">
+                        <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
+                        <div class="featured-proof-overlay">
+                            <div class="featured-proof-badge">YouTube Channel</div>
+                            <h4>Panda Universe</h4>
+                            <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
+                            <ul class="featured-proof-meta-list">
+                                <li>구독자 4,240명</li>
+                                <li>영상 475개</li>
+                                <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
+                                <li>지속 운영 중인 개인 크리에이터 채널</li>
+                            </ul>
+                            <span class="featured-proof-cta">채널 보러가기 ↗</span>
+                        </div>
+                    </div>
+                    <div class="featured-proof-body">
+                        <div class="featured-proof-label">YouTube Channel</div>
+                        <h3>Panda Universe</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="about-links">
+            <a class="about-link" href="https://www.behance.net/led32684792a3" target="_blank" rel="noopener noreferrer">
+                Behance — Selected Projects
+            </a>
+            <a class="about-link" href="https://www.instagram.com/panda.univ/" target="_blank" rel="noopener noreferrer">
+                Instagram — Visual Archive
+            </a>
+        </div>
+
+        <div class="tool-container">
+            <div class="tool-group">
+                <h4>3D</h4>
+                <p>Cinema 4D<br>Unreal Engine</p>
+            </div>
+            <div class="tool-group">
+                <h4>Render</h4>
+                <p>Octane Render<br>Redshift Render</p>
+            </div>
+            <div class="tool-group">
+                <h4>2D / Motion</h4>
+                <p>After Effects<br>Premiere Pro<br>Photoshop<br>Illustrator</p>
+            </div>
+            <div class="tool-group">
+                <h4>AI / Dev</h4>
+                <p>Midjourney<br>Adobe Firefly<br>Kling<br>Vibe Coding</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>WORKS</h2>
+        
+        <div id="company" class="works-block">
+            <h3 class="works-subtitle">Company Projects</h3>
+            <div class="grid">
+                <div onclick="openProject('science')">
+                    <div class="card"><img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="Science Festival"></div>
+                    <div class="card-info"><div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div><div class="card-tag">A-Plan Company</div></div>
+                </div>
+                <div onclick="openProject('lancome')">
+                    <div class="card"><img src="images/Company/24.12_LANCOME/LANCOME_01.png" alt="Lancome"></div>
+                    <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
+                </div>
+                <div onclick="openProject('housing')">
+                    <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_01.png" alt="Youth Housing"></div>
+                    <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
+                </div>
+                <div onclick="openProject('jeonju')">
+                    <div class="card"><img src="images/Company/24.07_Jeonju Cathedral/Jeonju Cathedral_10.jpg" alt="Jeonju Cathedral"></div>
+                    <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
+                </div>
+                <div onclick="openProject('unicef')">
+                    <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_17.png" alt="UNICEF"></div>
+                    <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div>
+                </div>
+                <div onclick="openProject('pinkspring')">
+                    <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_17.png" alt="Pink Spring"></div>
+                    <div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
+                </div>
+                <div onclick="openProject('purpool')">
+                    <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_04.png" alt="Purpool Party"></div>
+                    <div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
                 </div>
             </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">Book Publication</div>
-                <h3>CINEMA 4D & OctaneRender</h3>
-            </div>
-        </a>
+        </div>
 
-        <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">Lecture / Inflearn</div>
-                    <h4>Cinema 4D의 기초</h4>
-                    <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>평점 4.9 · 수강평 19개</li>
-                        <li>수강생 2,122명</li>
-                        <li>강사: 판다유니버스</li>
-                        <li>태그: Cinema 4D</li>
-                    </ul>
-                    <span class="featured-proof-cta">강의 보러가기 ↗</span>
+        <div id="personal" class="works-block">
+            <h3 class="works-subtitle">Personal Artworks</h3>
+            <div class="grid">
+                <div onclick="openProject('multiple')">
+                    <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/01_will_1_1.gif" alt="Multiple Dimensions"></div>
+                    <div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('golden')">
+                    <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_07.png" alt="Golden Flower"></div>
+                    <div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('odyssey')">
+                    <div class="card"><img src="images/Personal/25.01_A Media Art Odyssey/A Media Art Odyssey_01.png" alt="A Media Art Odyssey"></div>
+                    <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('particles')">
+                    <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
+                    <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('world_travel')">
+                    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_02.gif" alt="World Travel Media Art"></div>
+                    <div class="card-info"><div class="card-title">World Travel Media Art</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('casual')">
+                    <div class="card"><img src="images/Personal/25.07_casual/casual_02.png" alt="Isometric Daily Spaces"></div>
+                    <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
+                </div>
+                <div onclick="openProject('key_creativity')">
+                    <div class="card"><img src="images/Personal/24.12_Personal Title Sequence (Key to creativity)/Key to creativity_02.gif" alt="Personal Title Sequence (Key to creativity)"></div>
+                    <div class="card-info"><div class="card-title">Personal Title Sequence (Key to creativity)</div><div class="card-tag">Personal Artwork</div></div>
                 </div>
             </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">Lecture / Inflearn</div>
-                <h3>Cinema 4D Basic Class</h3>
-            </div>
-        </a>
+        </div>
+    </section>
 
-        <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
-            <div class="featured-proof-thumb">
-                <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
-                <div class="featured-proof-overlay">
-                    <div class="featured-proof-badge">YouTube Channel</div>
-                    <h4>Panda Universe</h4>
-                    <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
-                    <ul class="featured-proof-meta-list">
-                        <li>구독자 4,240명</li>
-                        <li>영상 475개</li>
-                        <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
-                        <li>지속 운영 중인 개인 크리에이터 채널</li>
-                    </ul>
-                    <span class="featured-proof-cta">채널 보러가기 ↗</span>
+    <section id="ai" style="background: #050505;">
+        <h2>AI / INTERACTIVE MEDIA</h2>
+
+        <div class="ai-feature">
+            <div class="ai-card-stack">
+                <div class="ai-card" onclick="openProject('car_drive')">
+                    <img class="ai-thumb" src="images/Personal/25.07_car_drive/car_drive_02.gif" alt="AI Generated Lamborghini">
+                    <span class="ai-badge">AI / Cinematic</span>
+                    <h3>AI Generated Lamborghini | Sora × Genspark Cinematic Experience</h3>
+                    <p>Sora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 프로젝트입니다.</p>
+                    <div class="ai-link">Open Portfolio ↗</div>
+                </div>
+
+                <div class="ai-card" onclick="openProject('ai_flower')">
+                    <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
+                    <span class="ai-badge">AI / Visual Series</span>
+                    <h3>A Flower Holds Light</h3>
+                    <p>빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.</p>
+                    <div class="ai-link">Open Portfolio ↗</div>
+                </div>
+
+                <div class="ai-card" onclick="openProject('musical_artwork')">
+                    <img class="ai-thumb" src="images/Personal/25.11_Musical Artwork/Musical Artwork_01.png" alt="Musical Artwork">
+                    <span class="ai-badge">AI / Musical Artwork</span>
+                    <h3>Musical Artwork</h3>
+                    <p>앰비언트 음악에서 출발한 AI 아트워크 컬렉션입니다.</p>
+                    <div class="ai-link">Open Portfolio ↗</div>
+                </div>
+
+                <div class="ai-card" onclick="showAILabTab()">
+                    <img class="ai-thumb" src="images/Personal/AI_source/thum.gif" alt="AI Source Archive">
+                    <span class="ai-badge">AI / Source Archive</span>
+                    <h3>AI Source Archive</h3>
+                    <p>AI만으로 제작한 비주얼 소스와 실험 결과물을 모아둔 아카이브입니다.</p>
+                    <div class="ai-link">Open Source Archive ↗</div>
+                </div>
+
+                <div class="ai-card interactive-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+                    <div class="interactive-card-thumb">
+                        <img class="ai-thumb interactive-thumb" src="images/Personal/26.04_Interactive-Media/Interactive-Media_01.png" alt="Interactive Media Experience">
+                        <div class="interactive-card-overlay">
+                            <p class="ic-desc">클릭할수록 에너지가 쌓이고, 터지며 반응하는<br>실시간 인터랙티브 미디어 아트</p>
+                            <ul class="ic-tags">
+                                <li>Click → Energy → Explosion</li>
+                                <li>Real-time Reaction</li>
+                                <li>Generative Visual</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="ai-badge">Interactive / Generative</span>
+                    <h3>Interactive Media Experience</h3>
+                    <div class="ai-link">Open Experience ↗</div>
+                </div>
+
+                <div class="ai-card" onclick="openAIModal('Work_Process/Work_Process.pdf')">
+                    <img class="ai-thumb" src="Work_Process/Process_04.PNG" alt="Production Workflow Deck Thumbnail 04">
+                    <span class="ai-badge">AI / Process Deck</span>
+                    <h3>Production Workflow Deck</h3>
+                    <p>AI 기반으로 정리한 작업 공정표와 제작 프로세스를 사이트 안에서 바로 확인할 수 있는 문서입니다.</p>
+                    <div class="ai-link">Open PDF In Site ↗</div>
                 </div>
             </div>
-            <div class="featured-proof-body">
-                <div class="featured-proof-label">YouTube Channel</div>
-                <h3>Panda Universe</h3>
+
+            <div class="ai-meta">
+                <h4>Section Note</h4>
+                <p>이 파트는 단순 툴 나열이 아니라, AI와 인터랙티브 미디어를 활용한 실험적 비주얼 확장 영역으로 구성합니다.</p>
+                <h4>Keywords</h4>
+                <p>Generative Visuals<br>Interactive Motion<br>AI Workflow<br>Experimental Media</p>
             </div>
-        </a>
-    </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>EXPERIENCE</h2>
+        <div class="exp-container">
+            <div>
+                <span class="exp-category-title">Work Experience</span>
+
+                <div class="exp-item">
+                    <h3>(주)에이플랜컴퍼니</h3>
+                    <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
+                    <ul class="desc-list">
+                        <li>미디어 아트용 그래픽 기획 및 제작</li>
+                        <li>테크니컬 팀 협업</li>
+                        <li>클라이언트 소통, 프로젝트 매니징</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>파라다이스세가사미</h3>
+                    <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
+                    <ul class="desc-list">
+                        <li>호텔 내부 행사, 음식 촬영 및 편집</li>
+                        <li>LED 전시용 3D 그래픽 제작</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>코스믹 블랙</h3>
+                    <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임/계장</div>
+                    <ul class="desc-list">
+                        <li>이러닝 사이트 업로드용 온라인 강의 제작</li>
+                        <li>촬영, 가편-종편, 인아웃트로 및 브릿지용 그래픽 제작, 외주자 관리</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>바이인터네셔널</h3>
+                    <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
+                    <ul class="desc-list">
+                        <li>SNS 업로드용 그래픽 작업</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>디피넛</h3>
+                    <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임/계장</div>
+                    <ul class="desc-list">
+                        <li>이러닝 사이트 업로드용 온라인 강의 제작 (아이스크림 원격 교육 연수원, 학교자치 등)</li>
+                        <li>촬영, 가편-종편, 인아웃트로 그래픽 제작</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>엘리엇</h3>
+                    <div class="comp-info">2018.06 - 2018.09 | 인턴</div>
+                    <ul class="desc-list">
+                        <li>로고 및 텍스트 애니메이션, 합성 작업</li>
+                        <li>넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아 광고 포스트 프로덕션 참여</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <span class="exp-category-title">Education & Achievement</span>
+
+                <div class="exp-item">
+                    <h3>Book Publication</h3>
+                    <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
+                    <ul class="desc-list">
+                        <li>2024 세종도서 우수도서 선정 및 마스터 가이드 제작</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>Online Education</h3>
+                    <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
+                    <ul class="desc-list">
+                        <li>인프런 Cinema 4D 기초 강의 런칭 및 커리큘럼 설계</li>
+                        <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <h3>Academic</h3>
+                    <div class="comp-info">Seoul Cyber University</div>
+                    <ul class="desc-list">
+                        <li>멀티미디어 디자인학과 학사 과정 재학 (2026 졸업 예정)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-wrap">
+            <p>010-8862-0286</p>
+            <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
+        </div>
+    </section>
+
+    <footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
 </div>
 
-<div class="about-links">
-    <a class="about-link" href="https://www.behance.net/led32684792a3" target="_blank" rel="noopener noreferrer">
-        Behance — Selected Projects
-    </a>
-    <a class="about-link" href="https://www.instagram.com/panda.univ/" target="_blank" rel="noopener noreferrer">
-        Instagram — Visual Archive
-    </a>
-</div>
-
-
-    <div class="tool-container">
-        <div class="tool-group">
-            <h4>3D</h4>
-            <p>Cinema 4D<br>Unreal Engine</p>
-        </div>
-        <div class="tool-group">
-            <h4>Render</h4>
-            <p>Octane Render<br>Redshift Render</p>
-        </div>
-        <div class="tool-group">
-            <h4>2D / Motion</h4>
-            <p>After Effects<br>Premiere Pro<br>Photoshop<br>Illustrator</p>
-        </div>
-        <div class="tool-group">
-            <h4>AI / Dev</h4>
-            <p>Midjourney<br>Adobe Firefly<br>Kling<br>Vibe Coding</p>
-        </div>
-    </div>
-</section>
-
-<section id="works">
-    <h2>WORKS</h2>
-    
-
-    <div id="company" class="works-block">
-        <h3 class="works-subtitle">Company Projects</h3>
-        <div class="grid">
-            <div onclick="openProject('science')">
-                <div class="card"><img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="Science Festival"></div>
-                <div class="card-info"><div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div><div class="card-tag">A-Plan Company</div></div>
-            </div>
-            <div onclick="openProject('lancome')">
-                <div class="card"><img src="images/Company/24.12_LANCOME/LANCOME_01.png" alt="Lancome"></div>
-                <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
-            </div>
-            <div onclick="openProject('housing')">
-                <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_01.png" alt="Youth Housing"></div>
-                <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
-            </div>
-            <div onclick="openProject('jeonju')">
-                <div class="card"><img src="images/Company/24.07_Jeonju Cathedral/Jeonju Cathedral_10.jpg" alt="Jeonju Cathedral"></div>
-                <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
-            </div>
-            <div onclick="openProject('unicef')">
-                <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_17.png" alt="UNICEF"></div>
-                <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div>
-            </div>
-            <div onclick="openProject('pinkspring')">
-                <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_17.png" alt="Pink Spring"></div>
-                <div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
-            </div>
-            <div onclick="openProject('purpool')">
-                <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_04.png" alt="Purpool Party"></div>
-                <div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="personal" class="works-block">
-        <h3 class="works-subtitle">Personal Artworks</h3>
-        <div class="grid">
-            <div onclick="openProject('multiple')">
-                <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/01_will_1_1.gif" alt="Multiple Dimensions"></div>
-                <div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal Artwork</div></div>
-            </div>
-            <div onclick="openProject('golden')">
-                <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_07.png" alt="Golden Flower"></div>
-                <div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Personal Artwork</div></div>
-            </div>
-            <div onclick="openProject('odyssey')">
-                <div class="card"><img src="images/Personal/25.01_A Media Art Odyssey/A Media Art Odyssey_01.png" alt="A Media Art Odyssey"></div>
-                <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
-            </div>
-           <div onclick="openProject('particles')">
-    <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
-    <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
-</div>
-
-<div onclick="openProject('world_travel')">
-    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_02.gif" alt="World Travel Media Art"></div>
-    <div class="card-info"><div class="card-title">World Travel Media Art</div><div class="card-tag">Personal Artwork</div></div>
-</div>
-
-
-
-<div onclick="openProject('casual')">
-
-    <div class="card"><img src="images/Personal/25.07_casual/casual_02.png" alt="Isometric Daily Spaces"></div>
-    <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
-</div>
-
-<div onclick="openProject('key_creativity')">
-    <div class="card"><img src="images/Personal/24.12_Personal Title Sequence (Key to creativity)/Key to creativity_02.gif" alt="Personal Title Sequence (Key to creativity)"></div>
-    <div class="card-info"><div class="card-title">Personal Title Sequence (Key to creativity)</div><div class="card-tag">Personal Artwork</div></div>
-</div>
-
-
-        </div>
-    </div>
-</section>
-
-<section id="ai" style="background: #050505;">
-    <h2>AI / INTERACTIVE MEDIA</h2>
-
-    <div class="ai-feature">
-        <div class="ai-card-stack">
-            <div class="ai-card" onclick="openProject('car_drive')">
-                <img class="ai-thumb" src="images/Personal/25.07_car_drive/car_drive_02.gif" alt="AI Generated Lamborghini">
-                <span class="ai-badge">AI / Cinematic</span>
-                <h3>AI Generated Lamborghini | Sora × Genspark Cinematic Experience</h3>
-                <p>Sora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 프로젝트입니다.</p>
-                <div class="ai-link">Open Portfolio ↗</div>
-            </div>
-
-          <div class="ai-card" onclick="openProject('ai_flower')">
-    <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
-    <span class="ai-badge">AI / Visual Series</span>
-    <h3>A Flower Holds Light</h3>
-    <p>빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.</p>
-    <div class="ai-link">Open Portfolio ↗</div>
-</div>
-
-<div class="ai-card" onclick="openProject('musical_artwork')">
-    <img class="ai-thumb" src="images/Personal/25.11_Musical Artwork/Musical Artwork_01.png" alt="Musical Artwork">
-    <span class="ai-badge">AI / Musical Artwork</span>
-    <h3>Musical Artwork</h3>
-    <p>앰비언트 음악에서 출발한 AI 아트워크 컬렉션입니다.</p>
-    <div class="ai-link">Open Portfolio ↗</div>
-</div>
-
-            <div class="ai-card" onclick="openProject('ai_source')">
-    <img class="ai-thumb" src="images/Personal/AI_source/thum.gif" alt="AI Source Archive">
-    <span class="ai-badge">AI / Source Archive</span>
-    <h3>AI Source Archive</h3>
-    <p>AI만으로 제작한 비주얼 소스와 실험 결과물을 모아둔 아카이브입니다.</p>
-    <div class="ai-link">Open Source Archive ↗</div>
-</div>
-
-
-<div class="ai-card interactive-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
-    <div class="interactive-card-thumb">
-        <img class="ai-thumb interactive-thumb" src="images/Personal/26.04_Interactive-Media/Interactive-Media_01.png" alt="Interactive Media Experience">
-        <div class="interactive-card-overlay">
-            <p class="ic-desc">클릭할수록 에너지가 쌓이고, 터지며 반응하는<br>실시간 인터랙티브 미디어 아트</p>
-            <ul class="ic-tags">
-                <li>Click → Energy → Explosion</li>
-                <li>Real-time Reaction</li>
-                <li>Generative Visual</li>
-            </ul>
-        </div>
-    </div>
-    <span class="ai-badge">Interactive / Generative</span>
-    <h3>Interactive Media Experience</h3>
-    <div class="ai-link">Open Experience ↗</div>
-</div>
-
-
-
-
-
-            <div class="ai-card" onclick="openAIModal('Work_Process/Work_Process.pdf')">
-                <img class="ai-thumb" src="Work_Process/Process_04.PNG" alt="Production Workflow Deck Thumbnail 04">
-                <span class="ai-badge">AI / Process Deck</span>
-                <h3>Production Workflow Deck</h3>
-                <p>AI 기반으로 정리한 작업 공정표와 제작 프로세스를 사이트 안에서 바로 확인할 수 있는 문서입니다.</p>
-                <div class="ai-link">Open PDF In Site ↗</div>
-            </div>
-        </div>
-
-        <div class="ai-meta">
-            <h4>Section Note</h4>
-            <p>이 파트는 단순 툴 나열이 아니라, AI와 인터랙티브 미디어를 활용한 실험적 비주얼 확장 영역으로 구성합니다.</p>
-            <h4>Keywords</h4>
-            <p>Generative Visuals<br>Interactive Motion<br>AI Workflow<br>Experimental Media</p>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-<section id="experience">
-    <h2>EXPERIENCE</h2>
-    <div class="exp-container">
-        <div>
-            <span class="exp-category-title">Work Experience</span>
-
-            <div class="exp-item">
-                <h3>(주)에이플랜컴퍼니</h3>
-                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
-                <ul class="desc-list">
-                    <li>미디어 아트용 그래픽 기획 및 제작</li>
-                    <li>테크니컬 팀 협업</li>
-                    <li>클라이언트 소통, 프로젝트 매니징</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>파라다이스세가사미</h3>
-                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
-                <ul class="desc-list">
-                    <li>호텔 내부 행사, 음식 촬영 및 편집</li>
-                    <li>LED 전시용 3D 그래픽 제작</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>코스믹 블랙</h3>
-                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임/계장</div>
-                <ul class="desc-list">
-                    <li>이러닝 사이트 업로드용 온라인 강의 제작</li>
-                    <li>촬영, 가편-종편, 인아웃트로 및 브릿지용 그래픽 제작, 외주자 관리</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>바이인터네셔널</h3>
-                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
-                <ul class="desc-list">
-                    <li>SNS 업로드용 그래픽 작업</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>디피넛</h3>
-                <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임/계장</div>
-                <ul class="desc-list">
-                    <li>이러닝 사이트 업로드용 온라인 강의 제작 (아이스크림 원격 교육 연수원, 학교자치 등)</li>
-                    <li>촬영, 가편-종편, 인아웃트로 그래픽 제작</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>엘리엇</h3>
-                <div class="comp-info">2018.06 - 2018.09 | 인턴</div>
-                <ul class="desc-list">
-                    <li>로고 및 텍스트 애니메이션, 합성 작업</li>
-                    <li>넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아 광고 포스트 프로덕션 참여</li>
-                </ul>
-            </div>
-        </div>
-
-        <div>
-            <span class="exp-category-title">Education & Achievement</span>
-
-            <div class="exp-item">
-                <h3>Book Publication</h3>
-                <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
-                <ul class="desc-list">
-                    <li>2024 세종도서 우수도서 선정 및 마스터 가이드 제작</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>Online Education</h3>
-                <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
-                <ul class="desc-list">
-                    <li>인프런 Cinema 4D 기초 강의 런칭 및 커리큘럼 설계</li>
-                    <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <h3>Academic</h3>
-                <div class="comp-info">Seoul Cyber University</div>
-                <ul class="desc-list">
-                    <li>멀티미디어 디자인학과 학사 과정 재학 (2026 졸업 예정)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<div id="aiLabContent" style="display: none;">
-    <div class="ai-lab-header">
-        <h1>AI LAB</h1>
-        <p>AI Source Archive<br>AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 독립 아카이브입니다.</p>
+<div id="aiLabContent" style="display: none; padding: 150px 60px 100px; max-width: 1600px; margin: 0 auto; min-height: 100vh;">
+    <div style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 40px; margin-bottom: 60px;">
+        <h1 style="font-size: 2.5rem; font-weight: 200; letter-spacing: -1px; margin-bottom: 15px;">AI LAB</h1>
+        <p style="font-size: 1rem; font-weight: 200; color: rgba(255,255,255,0.6); line-height: 1.6;">AI Source Archive<br>AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 독립 아카이브입니다.</p>
     </div>
     
-    <div id="aiLabGallery" class="ai-lab-gallery"></div>
-</div>
-    
-    <div id="aiLabGallery" class="ai-lab-gallery"></div>
-</div>
-    
-    <div class="ai-lab-gallery">
-        <img src="images/Personal/AI_source/06.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/06_1.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/07.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/07_1.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/08.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/08_1.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/01.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/02.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/03.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/04.gif" alt="AI Source" loading="lazy">
-        <img src="images/Personal/AI_source/05.gif" alt="AI Source" loading="lazy">
-    </div>
+    <div id="aiLabGallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;"></div>
 </div>
 <div id="projectModal" class="full-modal" onclick="closeProject()">
     <div class="modal-inner" onclick="event.stopPropagation()">
@@ -1294,15 +1245,6 @@
         </iframe>
     </div>
 </div>
-
-<section id="contact">
-    <div class="contact-wrap">
-        <p>010-8862-0286</p>
-        <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
-            
-
-    </div>
-</section>
 
 <script>
     const projectData = {
@@ -1966,53 +1908,44 @@ imageContainer.appendChild(img);
     function closeAIModal() {
         resetAllModals();
     }
-function showMainTab(targetId) {
-    document.getElementById('aiLabContent').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
+    
+    function showMainTab(targetId) {
+        document.getElementById('aiLabContent').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
 
-    if (targetId) {
-        setTimeout(() => {
-            const target = document.getElementById(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 10);
+        if (targetId) {
+            setTimeout(() => {
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 10);
+        }
     }
-}
 
-function showAILabTab() {
+    function showAILabTab() {
         resetAllModals(); 
         
+        document.getElementById('mainContent').style.display = 'none';
+        document.getElementById('aiLabContent').style.display = 'block';
+        window.scrollTo(0, 0);
+
+        // 스크립트가 실행될 때만 이미지를 로드합니다 (메인화면 침범 원천 차단)
         const gallery = document.getElementById('aiLabGallery');
-        // 에러 방지용 체크 및 이미지 불러오기
-        if (gallery) {
-            gallery.innerHTML = ''; 
-            
+        if (gallery && gallery.children.length === 0) {
             const data = projectData['ai_source'];
             if (data && data.images) {
                 data.images.forEach(fileName => {
                     const img = document.createElement('img');
-                    img.src = `images/${data.folder}/${fileName}`; 
+                    img.src = `images/${data.folder}/${fileName}`;
                     img.alt = "AI Source";
                     img.loading = "lazy";
                     gallery.appendChild(img);
                 });
             }
         }
-
-        // 기존 화면 숨기고 AI Lab 화면 표시 및 맨 위로 스크롤
-        document.getElementById('mainContent').style.display = 'none';
-        document.getElementById('aiLabContent').style.display = 'block';
-        window.scrollTo(0, 0);
     }
 </script>
 
-
-
-
-            
-
-<footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
-</div>
 </body>
 </html>
