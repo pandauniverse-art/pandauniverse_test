@@ -1,0 +1,126 @@
+/* =========================
+   ABOUT / WORKS / CONTACT 링크 버튼
+   ========================= */
+
+.about-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px 0 40px;
+}
+
+.about-link,
+.works-link,
+.contact-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    background: rgba(255,255,255,0.02);
+    min-height: 42px;
+}
+
+.about-link:hover,
+.works-link:hover,
+.contact-social:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.05);
+}
+
+.works-link-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.contact-socials {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   AI 섹션 카드 확장용
+   (PDF 썸네일 카드 추가할 때 같이 사용)
+   ========================= */
+
+.ai-card-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+.ai-feature {
+    display: block;
+}
+
+.ai-meta {
+    margin-top: 28px;
+    max-width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 20px;
+}
+
+
+.ai-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #111;
+}
+
+
+/* =========================
+   모바일 대응
+   ========================= */
+
+@media (max-width: 768px) {
+    .about-links {
+        gap: 10px;
+        margin: 20px 0 32px;
+    }
+
+    .about-link,
+    .works-link,
+    .contact-social {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.75rem;
+        padding: 12px 14px;
+    }
+
+    .works-link-row {
+        justify-content: flex-start;
+        margin-bottom: 24px;
+    }
+
+    .contact-socials {
+        gap: 10px;
+    }
+
+       .ai-card-stack {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+
+    .ai-thumb {
+        margin-bottom: 16px;
+    }
+}
