@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEE DEOK JUN | 3D Artist Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-color: rgba(255, 255, 255, 0.85);
+            --accent-color: rgba(255, 255, 255, 0.45);
+            --h1-size: 2.1rem;
+            --p-size: 1.2rem;
+            --letter-spacing: -1px;
+            --fw-bold: 600;
+            --fw-normal: 300;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 35px 50px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+
+        nav a:hover { opacity: 0.3; }
+
+        .hero {
+            width: 100%;
+            position: relative;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-video-container {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+        }
+
+        .hero-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: var(--h1-size);
+            font-weight: var(--fw-bold);
+            letter-spacing: var(--letter-spacing);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: var(--p-size);
+            font-weight: var(--fw-normal);
+            letter-spacing: -0.5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-content span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 100;
+            margin-top: 20px;
+            letter-spacing: 4px;
+            opacity: 0.6;
+        }
+
+        section {
+            padding: 100px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 200;
+            letter-spacing: -1.5px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+
+        .about-intro {
+            max-width: 900px;
+            margin-bottom: 50px;
+        }
+
+        .about-intro p {
+            font-size: 1rem;
+            font-weight: 200;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.78);
+        }
+
+        .tool-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tool-group {
+            background: rgba(15, 15, 15, 1);
+            border: 1px solid #111;
+            padding: 8px 15px;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .tool-group h4 {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .tool-group p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            font-weight: 200;
+            line-height: 1.5;
+            margin-left: 0;
+        }
+
+        .works-block + .works-block {
+            margin-top: 100px;
+        }
+
+        .works-subtitle {
+            font-size: 0.85rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 60px 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: #080808;
+            border: 1px solid #111;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+            transition: 0.4s;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover {
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover img { transform: scale(1.05); }
+
+        .card-info {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 100;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+     .ai-feature {
+    display: block;
+}
+
+        .ai-card {
+            display: block;
+            background: linear-gradient(135deg, #080808 0%, #10131a 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 40px;
+            text-decoration: none;
+            color: #fff;
+            transition: 0.35s ease;
+            cursor: pointer;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.22);
+        }
+
+        .ai-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 18px;
+        }
+
+        .ai-card h3 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .ai-card p {
+            font-size: 0.95rem;
+            font-weight: 200;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 24px;
+        }
+
+        .ai-link {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+        }
+
+               .ai-meta {
+            margin-top: 28px;
+            max-width: 100%;
+            background: #080808;
+            border: 1px solid #111;
+            padding: 30px;
+        }
+
+
+
+        .ai-meta h4 {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 400;
+        }
+
+        .ai-meta p {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            font-weight: 200;
+            margin-bottom: 22px;
+        }
+
+        .ai-modal-frame {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            background: #000;
+        }
+
+        .exp-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 100px;
+        }
+
+        .exp-category-title {
+            color: rgba(255,255,255,0.2);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: block;
+            border-left: 2px solid rgba(255,255,255,0.1);
+            padding-left: 10px;
+        }
+
+        .exp-item { margin-bottom: 40px; }
+
+        .exp-item h3 {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .exp-item .comp-info {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 100;
+        }
+
+        .desc-list {
+            list-style: none;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding-left: 15px;
+        }
+
+        .desc-list li {
+            font-size: 0.85rem;
+            font-weight: 100;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .full-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.98);
+            z-index: 3000;
+            overflow-y: auto;
+            padding: 60px 0;
+        }
+
+        .modal-inner {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .video-box {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    margin-bottom: 40px;
+}
+
+#videoContainer.video-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#videoContainer.video-grid-2 .video-box {
+    margin-bottom: 0;
+}
+
+
+        .project-meta {
+            margin-bottom: 60px;
+            border-left: 1px solid rgba(255,255,255,0.15);
+            padding-left: 25px;
+            margin-top: 40px;
+        }
+
+        .meta-group { margin-bottom: 30px; }
+
+        .meta-group h4 {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .meta-group p {
+            font-size: 1rem;
+            font-weight: 100;
+            line-height: 1.7;
+            color: #fff;
+            opacity: 0.9;
+            white-space: pre-line;
+            word-break: keep-all;
+        }
+
+        .special-text-block {
+            background: #080808;
+            padding: 30px;
+            border: 1px solid #111;
+            margin-bottom: 20px;
+        }
+
+        .special-text-block h5 {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .special-text-block p {
+            font-size: 0.9rem;
+            font-weight: 100;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.6);
+            white-space: pre-line;
+        }
+            .extra-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.extra-video-item iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+    background: #000;
+}
+
+.extra-video-caption {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.72);
+    text-transform: uppercase;
+}
+
+
+
+
+       .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #111;
+            display: block;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 30px;
+            right: 50px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            z-index: 3100;
+            opacity: 0.4;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover { opacity: 1; }
+
+        #contact {
+            text-align: center;
+            padding: 150px 60px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .contact-wrap p {
+            font-size: 2.2rem;
+            font-weight: 200;
+            letter-spacing: -1.5px;
+            margin-bottom: 10px;
+        }
+        .about-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 24px 0 40px;
+        }
+        .featured-proof {
+    margin: 18px 0 42px;
+}
+
+.featured-proof-title {
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.featured-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.featured-proof-card {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(10,10,10,1);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.featured-proof-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.24);
+}
+
+.featured-proof-thumb {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.featured-proof-thumb img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+    background: #111;
+}
+
+.featured-proof-card:hover .featured-proof-thumb img {
+    transform: scale(1.04);
+}
+
+.featured-proof-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.7) 42%,
+        rgba(0,0,0,0.15) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.featured-proof-card:hover .featured-proof-overlay {
+    opacity: 1;
+}
+
+.featured-proof-badge {
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.58);
+    margin-bottom: 10px;
+}
+
+.featured-proof-overlay h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.featured-proof-overlay p {
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.84);
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.featured-proof-meta-list {
+    list-style: none;
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.featured-proof-meta-list li {
+    font-size: 0.76rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.76);
+    margin-bottom: 4px;
+    font-weight: 300;
+}
+
+.featured-proof-cta {
+    font-size: 0.76rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.94);
+}
+
+.featured-proof-body {
+    padding: 16px 16px 18px;
+}
+
+.featured-proof-label {
+    font-size: 0.72rem;
+    color: var(--accent-color);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.featured-proof-body h3 {
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #fff;
+}
+
+
+        .about-link,
+        .works-link,
+        .contact-social {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 16px;
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.82);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .about-link:hover,
+        .works-link:hover,
+        .contact-social:hover {
+            border-color: rgba(255,255,255,0.35);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .works-link-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .contact-socials {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+.ai-card-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+
+.ai-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #111;
+}
+
+.interactive-thumb {
+    object-position: center 20%;
+}
+
+.interactive-card-thumb {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.interactive-card-thumb .ai-thumb {
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    transition: transform 0.45s ease;
+}
+
+.interactive-card:hover .interactive-card-thumb .ai-thumb {
+    transform: scale(1.04);
+}
+
+.interactive-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.65) 45%,
+        rgba(0,0,0,0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-card:hover .interactive-card-overlay {
+    opacity: 1;
+}
+
+.interactive-card-overlay .ic-desc {
+    font-size: 0.84rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 12px;
+}
+
+.interactive-card-overlay .ic-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.interactive-card-overlay .ic-tags li {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 3px 8px;
+}
+
+
+
+
+              @media (max-width: 768px) {
+                  .featured-proof-grid {
+    grid-template-columns: 1fr;
+}
+
+.featured-proof-overlay {
+    opacity: 1;
+}
+
+    :root { --h1-size: 1.8rem; }
+    .grid, .image-grid, .exp-container { grid-template-columns: 1fr; }
+    .close-btn { right: 20px; }
+    nav { padding: 24px 20px; gap: 18px; }
+    section { padding: 80px 20px; }
+    .ai-modal-frame { height: 70vh; }
+    .ai-card-stack {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+     .extra-video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #videoContainer.video-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#ai">AI</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-video-container">
+        <iframe src="https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&mute=1&loop=1&playlist=7qYDcnBwBlo&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+        <h1>LEE DEOK JUN</h1>
+        <p>3D Motion & Media Artist</p>
+        <span>시각적 경계를 허무는 3D 모션 & 미디어 아트</span>
+    </div>
+</section>
+
+<section id="about" style="background: #050505;">
+    <h2>ABOUT</h2>
+
+    <div class="about-intro">
+        <p>
+            안녕하세요. 3D Motion, Media Art, AI 기반 비주얼 워크플로우를 활용해
+            상업 프로젝트와 개인 작업을 확장하고 있는 이덕준입니다.
+            Cinema 4D, Unreal Engine, Render 파이프라인, AI 도구를 연결해
+            몰입감 있는 시각 경험을 제작합니다.
+        </p>
+    </div>
+ 
+<div class="featured-proof">
+    <div class="featured-proof-title">Featured Credentials</div>
+
+    <div class="featured-proof-grid">
+        <a class="featured-proof-card" href="https://www.yes24.com/Product/Goods/136904341" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/Book.jpg" alt="CINEMA 4D & OctaneRender Book">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">Book Publication</div>
+                    <h4>CINEMA 4D & OctaneRender</h4>
+                    <p>기초부터 마스터하는 3D 렌더링 가이드</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>저자: 이덕준</li>
+                        <li>출간일: 2024.11.15</li>
+                        <li>평점 10.0 · 리뷰 8건</li>
+                        <li>세종도서 우수도서 선정</li>
+                    </ul>
+                    <span class="featured-proof-cta">도서 상세 보기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">Book Publication</div>
+                <h3>CINEMA 4D & OctaneRender</h3>
+            </div>
+        </a>
+
+        <a class="featured-proof-card" href="https://www.inflearn.com/course/%EC%8B%9C%EB%84%A4%EB%A7%88-4d-%EA%B8%B0%EC%B4%88?inst=8517607e&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link&cid=327721" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/Inflear.png" alt="Inflearn Cinema 4D Basic">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">Lecture / Inflearn</div>
+                    <h4>Cinema 4D의 기초</h4>
+                    <p>C4D를 함께 익히며 실제 작업물을 만드는 입문 강의</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>평점 4.9 · 수강평 19개</li>
+                        <li>수강생 2,122명</li>
+                        <li>강사: 판다유니버스</li>
+                        <li>태그: Cinema 4D</li>
+                    </ul>
+                    <span class="featured-proof-cta">강의 보러가기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">Lecture / Inflearn</div>
+                <h3>Cinema 4D Basic Class</h3>
+            </div>
+        </a>
+
+        <a class="featured-proof-card" href="https://www.youtube.com/@C4DUnreal" target="_blank" rel="noopener noreferrer">
+            <div class="featured-proof-thumb">
+                <img src="images/Personal/Tutorial/youtube.jpg" alt="Panda Universe YouTube Channel">
+                <div class="featured-proof-overlay">
+                    <div class="featured-proof-badge">YouTube Channel</div>
+                    <h4>Panda Universe</h4>
+                    <p>C4D, Unreal Engine, AE 중심의 3D 실무형 튜토리얼 채널</p>
+                    <ul class="featured-proof-meta-list">
+                        <li>구독자 4,240명</li>
+                        <li>영상 475개</li>
+                        <li>튜토리얼 / 프로세스 / 실험 작업 기록</li>
+                        <li>지속 운영 중인 개인 크리에이터 채널</li>
+                    </ul>
+                    <span class="featured-proof-cta">채널 보러가기 ↗</span>
+                </div>
+            </div>
+            <div class="featured-proof-body">
+                <div class="featured-proof-label">YouTube Channel</div>
+                <h3>Panda Universe</h3>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="about-links">
+    <a class="about-link" href="https://www.behance.net/led32684792a3" target="_blank" rel="noopener noreferrer">
+        Behance — Selected Projects
+    </a>
+    <a class="about-link" href="https://www.instagram.com/panda.univ/" target="_blank" rel="noopener noreferrer">
+        Instagram — Visual Archive
+    </a>
+</div>
+
+
+    <div class="tool-container">
+        <div class="tool-group">
+            <h4>3D</h4>
+            <p>Cinema 4D<br>Unreal Engine</p>
+        </div>
+        <div class="tool-group">
+            <h4>Render</h4>
+            <p>Octane Render<br>Redshift Render</p>
+        </div>
+        <div class="tool-group">
+            <h4>2D / Motion</h4>
+            <p>After Effects<br>Premiere Pro<br>Photoshop<br>Illustrator</p>
+        </div>
+        <div class="tool-group">
+            <h4>AI / Dev</h4>
+            <p>Midjourney<br>Adobe Firefly<br>Kling<br>Vibe Coding</p>
+        </div>
+    </div>
+</section>
+
+<section id="works">
+    <h2>WORKS</h2>
+    
+
+    <div id="company" class="works-block">
+        <h3 class="works-subtitle">Company Projects</h3>
+        <div class="grid">
+            <div onclick="openProject('science')">
+                <div class="card"><img src="images/Company/25.03_Daejeon Science Festival/Daejeon Science_02.png" alt="Science Festival"></div>
+                <div class="card-info"><div class="card-title">대전 사이언스 페스티벌 (사이언스 오디세이)</div><div class="card-tag">A-Plan Company</div></div>
+            </div>
+            <div onclick="openProject('lancome')">
+                <div class="card"><img src="images/Company/24.12_LANCOME/LANCOME_01.png" alt="Lancome"></div>
+                <div class="card-info"><div class="card-title">랑콤 (LANCOME) Gala Dinner</div><div class="card-tag">A-Plan Company</div></div>
+            </div>
+            <div onclick="openProject('housing')">
+                <div class="card"><img src="images/Company/24.01_Youth Security Housing/Housing_01.png" alt="Youth Housing"></div>
+                <div class="card-info"><div class="card-title">신풍역 청년주택 미디어 아트</div><div class="card-tag">A-Plan Company</div></div>
+            </div>
+            <div onclick="openProject('jeonju')">
+                <div class="card"><img src="images/Company/24.07_Jeonju Cathedral/Jeonju Cathedral_10.jpg" alt="Jeonju Cathedral"></div>
+                <div class="card-info"><div class="card-title">전주 전동성당 미디어 파사드</div><div class="card-tag">A-Plan Company</div></div>
+            </div>
+            <div onclick="openProject('unicef')">
+                <div class="card"><img src="images/Company/24.04_UNICEF-Asiana/UNICEF-Asiana_17.png" alt="UNICEF"></div>
+                <div class="card-info"><div class="card-title">유니세프 X 아시아나 30주년</div><div class="card-tag">A-Plan Company</div></div>
+            </div>
+            <div onclick="openProject('pinkspring')">
+                <div class="card"><img src="images/Company/23.01_Pink Spring/Pink Spring_17.png" alt="Pink Spring"></div>
+                <div class="card-info"><div class="card-title">파라다이스 시티 (Pink Spring)</div><div class="card-tag">Paradise City</div></div>
+            </div>
+            <div onclick="openProject('purpool')">
+                <div class="card"><img src="images/Company/23.04_Purpool Party/Purpool Party_04.png" alt="Purpool Party"></div>
+                <div class="card-info"><div class="card-title">파라다이스 시티 (Purpool Party)</div><div class="card-tag">Paradise City</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="personal" class="works-block">
+        <h3 class="works-subtitle">Personal Artworks</h3>
+        <div class="grid">
+            <div onclick="openProject('multiple')">
+                <div class="card"><img src="images/Personal/25.11_MULTIPLE DIMENSIONS/01_will_1_1.gif" alt="Multiple Dimensions"></div>
+                <div class="card-info"><div class="card-title">MULTIPLE DIMENSIONS</div><div class="card-tag">Personal Artwork</div></div>
+            </div>
+            <div onclick="openProject('golden')">
+                <div class="card"><img src="images/Personal/25.06_Golden Flower A Rhythm of Form/Golden Flower A Rhythm of Form_07.png" alt="Golden Flower"></div>
+                <div class="card-info"><div class="card-title">Golden Flower: A Rhythm of Form</div><div class="card-tag">Personal Artwork</div></div>
+            </div>
+            <div onclick="openProject('odyssey')">
+                <div class="card"><img src="images/Personal/25.01_A Media Art Odyssey/A Media Art Odyssey_01.png" alt="A Media Art Odyssey"></div>
+                <div class="card-info"><div class="card-title">A Media Art Odyssey</div><div class="card-tag">Personal Artwork</div></div>
+            </div>
+           <div onclick="openProject('particles')">
+    <div class="card"><img src="images/Personal/24.04_Particles universe Media Artv/Particles universe Media Art_04.png" alt="Particles universe Media Art"></div>
+    <div class="card-info"><div class="card-title">Particles universe Media Art</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+<div onclick="openProject('world_travel')">
+    <div class="card"><img src="images/Personal/24.07_World Travel Media Art/World Travel_02.gif" alt="World Travel Media Art"></div>
+    <div class="card-info"><div class="card-title">World Travel Media Art</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+
+
+<div onclick="openProject('casual')">
+
+    <div class="card"><img src="images/Personal/25.07_casual/casual_02.png" alt="Isometric Daily Spaces"></div>
+    <div class="card-info"><div class="card-title">Isometric Daily Spaces</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+<div onclick="openProject('key_creativity')">
+    <div class="card"><img src="images/Personal/24.12_Personal Title Sequence (Key to creativity)/Key to creativity_02.gif" alt="Personal Title Sequence (Key to creativity)"></div>
+    <div class="card-info"><div class="card-title">Personal Title Sequence (Key to creativity)</div><div class="card-tag">Personal Artwork</div></div>
+</div>
+
+
+        </div>
+    </div>
+</section>
+
+<section id="ai" style="background: #050505;">
+    <h2>AI / INTERACTIVE MEDIA</h2>
+
+    <div class="ai-feature">
+        <div class="ai-card-stack">
+            <div class="ai-card" onclick="openProject('car_drive')">
+                <img class="ai-thumb" src="images/Personal/25.07_car_drive/car_drive_02.gif" alt="AI Generated Lamborghini">
+                <span class="ai-badge">AI / Cinematic</span>
+                <h3>AI Generated Lamborghini | Sora × Genspark Cinematic Experience</h3>
+                <p>Sora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 프로젝트입니다.</p>
+                <div class="ai-link">Open Portfolio ↗</div>
+            </div>
+
+          <div class="ai-card" onclick="openProject('ai_flower')">
+    <img class="ai-thumb" src="images/Personal/24.05_ai_flower/ai_flower_01.gif" alt="A Flower Holds Light">
+    <span class="ai-badge">AI / Visual Series</span>
+    <h3>A Flower Holds Light</h3>
+    <p>빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.</p>
+    <div class="ai-link">Open Portfolio ↗</div>
+</div>
+
+<div class="ai-card" onclick="openProject('musical_artwork')">
+    <img class="ai-thumb" src="images/Personal/25.11_Musical Artwork/Musical Artwork_01.png" alt="Musical Artwork">
+    <span class="ai-badge">AI / Musical Artwork</span>
+    <h3>Musical Artwork</h3>
+    <p>앰비언트 음악에서 출발한 AI 아트워크 컬렉션입니다.</p>
+    <div class="ai-link">Open Portfolio ↗</div>
+</div>
+
+            <div class="ai-card" onclick="openProject('ai_source')">
+    <img class="ai-thumb" src="images/Personal/AI_source/thum.gif" alt="AI Source Archive">
+    <span class="ai-badge">AI / Source Archive</span>
+    <h3>AI Source Archive</h3>
+    <p>AI만으로 제작한 비주얼 소스와 실험 결과물을 모아둔 아카이브입니다.</p>
+    <div class="ai-link">Open Source Archive ↗</div>
+</div>
+
+
+<div class="ai-card interactive-card" onclick="openAIModal('https://pandauniverse-art.github.io/Interactive-Media/')">
+    <div class="interactive-card-thumb">
+        <img class="ai-thumb interactive-thumb" src="images/Personal/26.04_Interactive-Media/Interactive-Media_01.png" alt="Interactive Media Experience">
+        <div class="interactive-card-overlay">
+            <p class="ic-desc">클릭할수록 에너지가 쌓이고, 터지며 반응하는<br>실시간 인터랙티브 미디어 아트</p>
+            <ul class="ic-tags">
+                <li>Click → Energy → Explosion</li>
+                <li>Real-time Reaction</li>
+                <li>Generative Visual</li>
+            </ul>
+        </div>
+    </div>
+    <span class="ai-badge">Interactive / Generative</span>
+    <h3>Interactive Media Experience</h3>
+    <div class="ai-link">Open Experience ↗</div>
+</div>
+
+
+
+
+
+            <div class="ai-card" onclick="openAIModal('Work_Process/Work_Process.pdf')">
+                <img class="ai-thumb" src="Work_Process/Process_04.PNG" alt="Production Workflow Deck Thumbnail 04">
+                <span class="ai-badge">AI / Process Deck</span>
+                <h3>Production Workflow Deck</h3>
+                <p>AI 기반으로 정리한 작업 공정표와 제작 프로세스를 사이트 안에서 바로 확인할 수 있는 문서입니다.</p>
+                <div class="ai-link">Open PDF In Site ↗</div>
+            </div>
+        </div>
+
+        <div class="ai-meta">
+            <h4>Section Note</h4>
+            <p>이 파트는 단순 툴 나열이 아니라, AI와 인터랙티브 미디어를 활용한 실험적 비주얼 확장 영역으로 구성합니다.</p>
+            <h4>Keywords</h4>
+            <p>Generative Visuals<br>Interactive Motion<br>AI Workflow<br>Experimental Media</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="experience">
+    <h2>EXPERIENCE</h2>
+    <div class="exp-container">
+        <div>
+            <span class="exp-category-title">Work Experience</span>
+
+            <div class="exp-item">
+                <h3>(주)에이플랜컴퍼니</h3>
+                <div class="comp-info">2024.04 - 2025.09 | 미디어팀 사원</div>
+                <ul class="desc-list">
+                    <li>미디어 아트용 그래픽 기획 및 제작</li>
+                    <li>테크니컬 팀 협업</li>
+                    <li>클라이언트 소통, 프로젝트 매니징</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>파라다이스세가사미</h3>
+                <div class="comp-info">2022.01 - 2023.09 | 컨텐츠 크리에이티브 사원</div>
+                <ul class="desc-list">
+                    <li>호텔 내부 행사, 음식 촬영 및 편집</li>
+                    <li>LED 전시용 3D 그래픽 제작</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>코스믹 블랙</h3>
+                <div class="comp-info">2021.05 - 2022.01 | 제작팀 주임/계장</div>
+                <ul class="desc-list">
+                    <li>이러닝 사이트 업로드용 온라인 강의 제작</li>
+                    <li>촬영, 가편-종편, 인아웃트로 및 브릿지용 그래픽 제작, 외주자 관리</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>바이인터네셔널</h3>
+                <div class="comp-info">2020.07 - 2020.11 | 아트팀 사원</div>
+                <ul class="desc-list">
+                    <li>SNS 업로드용 그래픽 작업</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>디피넛</h3>
+                <div class="comp-info">2019.04 - 2020.04 | 컨텐츠 제작팀 주임/계장</div>
+                <ul class="desc-list">
+                    <li>이러닝 사이트 업로드용 온라인 강의 제작 (아이스크림 원격 교육 연수원, 학교자치 등)</li>
+                    <li>촬영, 가편-종편, 인아웃트로 그래픽 제작</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>엘리엇</h3>
+                <div class="comp-info">2018.06 - 2018.09 | 인턴</div>
+                <ul class="desc-list">
+                    <li>로고 및 텍스트 애니메이션, 합성 작업</li>
+                    <li>넥슨 던전앤파이터 광고, 워너원 비타500 캠페인, 잡코리아 광고 포스트 프로덕션 참여</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <span class="exp-category-title">Education & Achievement</span>
+
+            <div class="exp-item">
+                <h3>Book Publication</h3>
+                <div class="comp-info">Author | 『CINEMA 4D & OctaneRender』</div>
+                <ul class="desc-list">
+                    <li>2024 세종도서 우수도서 선정 및 마스터 가이드 제작</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>Online Education</h3>
+                <div class="comp-info">Instructor | Inflearn & YouTube (Panda Universe)</div>
+                <ul class="desc-list">
+                    <li>인프런 Cinema 4D 기초 강의 런칭 및 커리큘럼 설계</li>
+                    <li>유튜브 '판다유니버스' 채널 운영 (구독자 4,000명)</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <h3>Academic</h3>
+                <div class="comp-info">Seoul Cyber University</div>
+                <ul class="desc-list">
+                    <li>멀티미디어 디자인학과 학사 과정 재학 (2026 졸업 예정)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="projectModal" class="full-modal" onclick="closeProject()">
+    <div class="modal-inner" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeProject()">CLOSE</span>
+
+        <div id="videoContainer"></div>
+
+        <div class="project-meta">
+            <div class="meta-group">
+                <h4 id="roleTitle">참여 업무</h4>
+                <p id="projectRole"></p>
+            </div>
+            <div class="meta-group">
+                <h4 id="descTitle">제작 기획</h4>
+                <p id="projectDesc"></p>
+            </div>
+            <div id="specialTextContainer"></div>
+        </div>
+
+        <div class="image-feed">
+            <h3 style="font-weight:100; font-size:0.8rem; letter-spacing:3px; color:var(--accent-color); margin-bottom:30px;">PROJECT STILLS</h3>
+            <div id="projectImages" class="image-grid"></div>
+        </div>
+    </div>
+</div>
+
+<div id="aiModal" class="full-modal" onclick="closeAIModal()">
+    <div class="modal-inner" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeAIModal()">CLOSE</span>
+        <iframe
+            id="aiFrame"
+            class="ai-modal-frame"
+            src=""
+            loading="lazy"
+            allow="fullscreen; autoplay"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </div>
+</div>
+
+<section id="contact">
+    <div class="contact-wrap">
+        <p>010-8862-0286</p>
+        <p style="font-size: 1.1rem; opacity: 0.5;">led3268@naver.com</p>
+            
+
+    </div>
+</section>
+
+<script>
+    const projectData = {
+        science: {
+            video: "a_dn_9OKv5I",
+            role: "그래픽팀 팀장 (업무 스케줄, 퀄리티 조율) / PM (클라이언트 소통)",
+            desc: "01 : 차원의 문이 열리다\n02 : 1970년대 대전, 대한민국 과학이 깨어나다\n03 : 연결된 과학, 연결된 세상\n04 : 차원을 넘어, 새로운 세계로!",
+            folder: "Company/25.03_Daejeon Science Festival",
+            images: Array.from({length: 21}, (_, i) => `Daejeon Science_${String(i+1).padStart(2, '0')}.png`)
+        },
+        lancome: {
+            video: "tM7U7Cmu9ZE",
+            role: "컨텐츠 제작, 맵핑용 테크니컬 협의",
+            desc: "랑콤에서 서울에 갈라디너쇼를 개최하여 인플루언서들을 통한 행사를 기획했고, 에이플랜컴퍼니측에서 컨텐츠 제작과 하드웨어 시공, 맵핑을 담당했습니다.\n인플루언서들이 참여하는 디너쇼인만큼 컨텐츠 자체의 집중도가 아닌, 전반적인 저녁 행사 장소에서 잘 어울러지는 포인트에 집중했고, 랑콤 컨테츠의 특유의 세련된 황금빛과 우아한 매력을 집중적으로 표현했습니다.",
+            folder: "Company/24.12_LANCOME",
+            images: ["LANCOME_01.png", "LANCOME_02.png", "LANCOME_03.png", "LANCOME_04.png", "LANCOME_05.png", "LANCOME_06.png"]
+        },
+        housing: {
+            video: "FUOCDv6eNKo",
+            role: "컬러퀸 : 전체 컨텐츠 중 샹들리에, 뒷면 투명 디스프레이 컨텐츠 제작 (참여율 40%)\n즐길락 : 원형 컨텐츠 중 샹들리에, 투명 디스플레이 일부 컨텐츠 제작 (참여율 30%)",
+            desc: "해당 컨텐츠는 랜드코퍼레이션에서 청년들을 위한 비스타동원 주택을 건설하며 시설 내의 거주자들에게 흥미로운 컨텐츠를 상영하기 위해 제작되었습니다. 에이플랜컴퍼니측에서 컨텐츠 관련 시설 및 컨텐츠를 제작했습니다.\n일정 시간마다 시작되는 \"시그널 넥서스\", \"즐길락\", \"컬러퀸\" 미디어쇼가 상영되며 해당 쇼들이 상영되지 않는 시간동안은 상시 컨텐츠로 비가 내리거나, 우주가 보이는 등 시청자들의 지루함을 달래는 컨텐츠가 기획되어 있으며 하단 원형 디스플레이의 경우 상시 컨텐츠에선 인터렉티브한 컨텐츠로 제작되었습니다.\n제작에 참여한 컬러퀸 컨텐츠의 경우 심심하고 반복적인 지루한 도심에서 색이 입혀지며 사람들이 지루함을 벗어나 활기를 되찾고, 더 재미있고 흥미있는 일상을 기대할 수 있게 기획됐으며, 즐길락 컨텐츠는 수묵화로 시작하여 사물놀이를 비롯한 현대미술의 모든 조화로움을 시청하게끔 기획했습니다. 투명 디스플레이와 상들리에의 경우 일정 위치에서 시청했을 때 원형 디스플레이와 잘 어울리는 부분을 많이 고려하여 제작했습니다.",
+            folder: "Company/24.01_Youth Security Housing",
+            images: [
+                "Housing_01.png", "Housing_02.png", "Housing_03.png", "Housing_04.png", "Housing_05.png",
+                "Housing_06.png", "Housing_07.png", "Housing_08.png", "Housing_09.png", "Housing_10.png",
+                "Housing_11.png", "Housing_12.png", "Housing_14.png", "Housing_15.png", "Housing_16.png",
+                "Housing_17.png", "Housing_18.png", "Housing_19.png", "Housing_20.png"
+            ],
+            special: {
+                title: "컨텐츠 정보",
+                content: "▪ 컨텐츠 종류: 상시 컨텐츠, 미디어 쇼 컨텐츠 (3가지 쇼 교차 상영)\n▪ 미디어 쇼 구성: 모객, 인트로, 후킹, 메인 순서\n▪ 하드웨어: 벽면 컨텐츠, 원형 컨텐츠, 투명 디스플레이, 샹들리에"
+            },
+            extraVideos: [
+                {
+                    title: "청년주택 참여 영상 01",
+                    url: "https://www.youtube.com/watch?v=4S83hplBnjI"
+                },
+                {
+                    title: "청년주택 참여 영상 02",
+                    url: "https://www.youtube.com/watch?v=8xgPYrSDor4"
+                }
+            ]
+        },
+        jeonju: {
+            video: "_FiQtCwXH6M",
+            role: "4부 전주의 빛으로 성당을 빚다 파트 기획 및 총 제작 담당.\n연출 포인트 및 맵핑용 모델링 디테일 수정 담당.",
+            desc: "해당 행사는 전주에서 진행한 미디어 파사드 행사이며 기초 틀을 잡아주신 성당 담당 신부님과 협의하여 스토리를 완성했습니다.\n과거부터 이어지는 성당의 건축 과정과 이야기를 행사에 녹아내는 것에 집중했으며, 진중하면서도 파사드 특유의 화려함을 앞뒤 순서와 조화롭게 연결하는 것에 염두를 두고 작업했습니다.",
+            folder: "Company/24.07_Jeonju Cathedral",
+            images: ["Jeonju Cathedral_01.gif", "Jeonju Cathedral_02.gif", "Jeonju Cathedral_03.gif", "Jeonju Cathedral_04.gif", "Jeonju Cathedral_05_1.gif", "Jeonju Cathedral_06.gif", "Jeonju Cathedral_07.gif", "Jeonju Cathedral_08_1.gif", "Jeonju Cathedral_10.jpg", "Jeonju Cathedral_11.jpg", "Jeonju Cathedral_12.jpg", "Jeonju Cathedral_13.jpg", "Jeonju Cathedral_14.jpg", "Jeonju Cathedral_15.jpg", "Jeonju Cathedral_16.jpg", "Jeonju Cathedral_17.jpg", "Jeonju Cathedral_18.jpg", "Jeonju Cathedral_19.jpg", "Jeonju Cathedral_20.jpg", "Jeonju Cathedral_21.jpg", "Jeonju Cathedral_22.jpg", "Jeonju Cathedral_23.jpg", "Jeonju Cathedral_24.jpg", "Jeonju Cathedral_25.jpg"],
+            special: {
+                title: "행사 순서 (제작 파트: 4부)",
+                content: "1부 빛을 깨우다\n2부 전주를 즐기다\n3부 전주를 비비다\n4부 전주의 빛으로 성당을 빚다 ★\n5부 전주를 빛으로 그리다"
+            }
+        },
+        unicef: {
+            video: "RQ2Z5zdNbLI",
+            role: "전체 스토리보드 제작, 리드 아티스트 (전체 70% 비중 담당), 맵핑 프로세스 정리",
+            desc: "아시아나 항공사와 유니세프의 모금 활동 20주년을 기념한 행사로, 비행기의 리얼한 모습부터 조명이 들어오는 연출과 객실 내부 빛, 사람들이 직접 모금하는 장면을 그림자 아트로 표현했습니다.\n이후에는 예술 기획사의 연출적인 포인트에 집중하여 작업을 진행했습니다.\n\n맵핑 단계에서는 몸통, 엔진, 날개 부분들을 별도로 제작했으며, 블루라이트라는 중요한 행사 키워드가 있었기 때문에 전체 색감이 화려하면서도 푸른 계열과 잘 어울리도록 구성했습니다.\n실제 행사까지 고려하여 사운드 아티스트와 많은 컨택을 하며 진행했습니다.",
+            folder: "Company/24.04_UNICEF-Asiana",
+            images: ["UNICEF-Asiana_01.png", "UNICEF-Asiana_02.png", "UNICEF-Asiana_03.png", "UNICEF-Asiana_04.png", "UNICEF-Asiana_05.gif", "UNICEF-Asiana_06.gif", "UNICEF-Asiana_07.gif", "UNICEF-Asiana_08.gif", "UNICEF-Asiana_09.gif", "UNICEF-Asiana_10.gif", "UNICEF-Asiana_11.png", "UNICEF-Asiana_12.png", "UNICEF-Asiana_13.png", "UNICEF-Asiana_14.png", "UNICEF-Asiana_15.png", "UNICEF-Asiana_16.png", "UNICEF-Asiana_17.png"]
+        },
+        pinkspring: {
+            video: "kJtE4o17MqM",
+            role: "전체 기획 및 그래픽 제작 총괄",
+            desc: "파라다이스 시티 호텔 내부의 3 Window Media에 봄 시즌을 컨셉으로 작업한 영상입니다.\n호텔의 아이덴티티와 봄의 분위기를 조화시켜 전체적으로 아름다운 장면을 연출하고자 했으며, 각 장면에서 파라다이스의 실제 건물들을 등장시켜 재미 요소를 추가했습니다.",
+            folder: "Company/23.01_Pink Spring",
+            images: ["Pink Spring_01.gif", "Pink Spring_02.gif", "Pink Spring_03.gif", "Pink Spring_04.gif", "Pink Spring_05.gif", "Pink Spring_06.gif", "Pink Spring_07.gif", "Pink Spring_08.gif", "Pink Spring_09.gif", "Pink Spring_10.gif", "Pink Spring_10.png", "Pink Spring_11.png", "Pink Spring_12.gif", "Pink Spring_13.gif", "Pink Spring_14.gif", "Pink Spring_15.png", "Pink Spring_16.png"]
+        },
+        purpool: {
+            video: "1qmuRc5dCho",
+            role: "제작 비중 90% (기획, 제작, 사운드 총괄)\n*유튜브용 사운드는 행사 DJ 곡 활용",
+            desc: "파라다이스 시티 호텔의 여름 풀파티를 기념하여 신나는 음악과 '퍼풀파티'라는 보라색 컨셉에 맞춰 제작한 영상입니다.",
+            folder: "Company/23.04_Purpool Party",
+            images: ["Purpool Party_01.png", "Purpool Party_02.gif", "Purpool Party_03.png", "Purpool Party_04.gif"]
+        },
+
+        multiple: {
+            videos: ["4tavRr29Fmo", "pMBceJxxi0k"],
+            role: "개인 작업 (Personal Artwork)",
+            desc: "MULTIPLE DIMENSIONS | Immersive Media Art Collection\n\nI'm making what I need to see exist. Panda Universe needed new dimensions—not for clients, not for algorithms, just because these worlds wanted to exist. MULTIPLE DIMENSIONS expands into multiple realms that live independently: frozen sanctuaries, golden labyrinths, collapsing black holes, regenerating waves, transcendent gardens. Each uses different techniques—traditional rendering craft, real-time engines, AI partnerships—because each dimension demanded its own visual language and answered only to its own logic. The ultra-wide panoramic format refuses to fit standard screens. Chapters that don't follow, don't connect, just exist on their own terms.\n\n제가 존재하길 원하는 것을 만듭니다. 판다유니버스는 새로운 차원이 필요했습니다. 클라이언트를 위해서도, 알고리즘을 위해서도 아니라, 단지 이 세계들이 존재하길 원했기 때문입니다. MULTIPLE DIMENSIONS는 독립적으로 살아가는 여러 차원으로 확장됩니다: 얼어붙은 성소, 황금 미궁, 붕괴하는 블랙홀, 재생하는 파도, 초월한 정원. 각 세계는 전통 렌더링 장인정신, 실시간 엔진, AI 파트너십 등 서로 다른 기법을 사용합니다. 각 차원이 고유한 시각 언어를 요구했고 오직 자신만의 논리에 답하기 때문입니다. 초광각 파노라마 포맷은 표준 화면에 맞춰지길 거부합니다. 따라가지도 않고, 연결되지도 않고, 각자의 방식으로 존재하는 챕터들입니다.\n\nChapter 1: Frozen Purity | 얼음의 순수\n무수한 얼음 입자들이 공간을 가로질러 끝없이 떨어지는 결정의 세계. 빛이 얼어붙은 물질을 통과하며 굴절되는 방식을 완성하는 데 몇 시간을 보냈고, 순수하고 손대지 않은 고요의 성소를 만들어냈습니다. 모든 것이 시작되는 곳—형태 이전, 의미 이전, 그저 결정화된 가능성만이 존재합니다.\n\nChapter 2: Golden Codex | 황금의 서사\n바로크 건축이 동양의 만다라 기하학과 충돌하며, 제가 금박 텍스처와 회전 패턴에 집착하며 지어올린 궁전을 만듭니다. 모든 표면이 숨쉬고 레이어를 드러내며, 인류의 성취와 우주적 질서를 동시에 암시합니다. 정점에 도달한 문명, 제가 항상 상상했던 장엄함이 느껴져야 하는 방식.\n\nChapter 3: Event Horizon | 사건의 지평선\n제가 실시간으로 렌더링한 압도적인 블랙홀, 궤적을 조정하며 수백만 개의 파티클이 소멸을 향해 나선을 그리는 것을 지켜봤습니다. 돌이킬 수 없는 지점을 넘는 순간입니다. 끝이 아니라, 이전 챕터에서 제가 만든 모든 것이 순수한 중력으로 녹아드는 변화의 정점.\n\nChapter 4: Cosmic Waves | 우주의 파도\nAI에게 \"우주 파도\"를 상상해달라고 요청했고, AI는 제가 스스로 디자인할 수 없었던 무언가를 돌려줬습니다—재생의 힘으로 맥동하는 유기적 패턴. 이것을 레이어로 쪼개고, 모션을 추가하고, 흐르게 만들었습니다. 파괴의 여파가 다시 살아있다고 느껴지는 무언가로 변모합니다.\n\nChapter 5: Celestial Garden | 천상의 정원\nAI가 존재하도록 꿈꾼 생물발광 식물들—지구의 것도, 외계의 것도 아닌, 제가 수년간 시각화하려 했던 그 사이 어딘가의 것. 이들은 무중력에 떠 있으며, 모션 AI로 생성한 부드러운 펄스로 숨을 쉽니다. 물질이 제가 정확히 이름 붙일 수 없는 무언가가 되는 최후의 차원.",
+            folder: "Personal/25.11_MULTIPLE DIMENSIONS",
+            images: ["00_title_1.gif", "01_1.gif", "01_2_1.gif", "01_floor_1_1.gif", "01_will_1_1.gif", "02_1.gif", "02_2_1.gif", "03_1.gif", "03_2_1.gif", "04_1.gif", "04_2_1.gif", "05_1.gif", "05_2_1.gif"]
+        },
+        golden: {
+            video: null,
+            role: "개인 작업 (Personal Artwork)",
+            desc: "Golden Flower: A Rhythm of Form",
+            folder: "Personal/25.06_Golden Flower A Rhythm of Form",
+            images: ["Golden Flower A Rhythm of Form_01.png", "Golden Flower A Rhythm of Form_02.gif", "Golden Flower A Rhythm of Form_03.gif", "Golden Flower A Rhythm of Form_04.gif", "Golden Flower A Rhythm of Form_05.png", "Golden Flower A Rhythm of Form_06.png", "Golden Flower A Rhythm of Form_07.png", "Golden Flower A Rhythm of Form_08.png", "Golden Flower A Rhythm of Form_09.png", "Golden Flower A Rhythm of Form_10.png", "Golden Flower A Rhythm of Form_11.png", "Golden Flower A Rhythm of Form_12.png", "Golden Flower A Rhythm of Form_13.png", "Golden Flower A Rhythm of Form_14.png", "Golden Flower A Rhythm of Form_15.png", "Golden Flower A Rhythm of Form_16.png", "Golden Flower A Rhythm of Form_17.png", "Golden Flower A Rhythm of Form_18.png", "Golden Flower A Rhythm of Form_19.png", "Golden Flower A Rhythm of Form_20.png", "Golden Flower A Rhythm of Form_21.png"]
+        },
+        odyssey: {
+            video: "gtGRzHFRN5k",
+            role: "개인 작업 (Personal Artwork)",
+            desc: "A Media Art Odyssey",
+            folder: "Personal/25.01_A Media Art Odyssey",
+            images: Array.from({length: 18}, (_, i) => `A Media Art Odyssey_${String(i+1).padStart(2, '0')}.png`)
+        },
+        particles: {
+            video: "wjkUzeLqQjU",
+            role: "개인 작업 (Personal Artwork)",
+            desc: "Overview\n\nAs the first media art work, not the existing motion graphics, I started with the idea of\nmaintaining the existing style and decorating the space created by the graphics.\nI kept thinking about how it would feel to have such a space, and I made the most of the\nsenses that could be felt in those spaces.\n\n기존의 모션그래픽이 아닌 첫 미디어 아트 작업으로써 기존에 스타일을 유지하며\n직접 그래픽으로 제작한 공간을 꾸며보고 싶다는 생각으로 시작하게 되었습니다.\n실제로 저런 공간이 있으면 어떤 느낌이 날까 하는 고민을 계속 했으며, 그 공간에서\n느낄 수 있는 감각을 최대한 살려서 제작했습니다.",
+            folder: "Personal/24.04_Particles universe Media Artv",
+            images: [
+                "Particles universe Media Art_01.gif",
+                "Particles universe Media Art_02_1.gif",
+                "Particles universe Media Art_03.png",
+                "Particles universe Media Art_04.png",
+                "Particles universe Media Art_05.png",
+                "Particles universe Media Art_06.png",
+                "Particles universe Media Art_07.png",
+                "Particles universe Media Art_08.png",
+                "Particles universe Media Art_09.png",
+                "Particles universe Media Art_10.png",
+                "Particles universe Media Art_11.png",
+                "Particles universe Media Art_12.png",
+                "Particles universe Media Art_13.png",
+                "Particles universe Media Art_14.png",
+                "Particles universe Media Art_15.png"
+            ]
+        },
+
+        world_travel: {
+            embedVideos: [
+                "https://www.youtube.com/embed/dktR2GlvwyY?autoplay=1&rel=0",
+                "https://player.vimeo.com/video/980975483?h=f08a428212"
+            ],
+            role: "개인 작업 (Personal Artwork)",
+            desc: `My own media art
+
+Overview
+
+인위적으로 제작한 저의 공간에 저만의 세계관을 표현하고 싶었습니다.
+개인적으로 운영하는 유튜브 채널, 개인의 아이덴티티와
+저만의 모든 세계관과 질서를 표현하여 그 공간들이 서로 이어져있음을
+표현하며 제작했습니다.
+
+I wanted to express my own worldview in my artificially created space.
+I created a YouTube channel that I run personally, my identity,
+and all my own worldview and order to express that the spaces
+are connected to each other.`,
+            folder: "Personal/24.07_World Travel Media Art",
+            images: [
+                "World Travel_01.png",
+                "World Travel_02.gif",
+                "World Travel_03.png",
+                "World Travel_04.png",
+                "World Travel_05.png",
+                "World Travel_06.png",
+                "World Travel_07.gif",
+                "World Travel_08.gif",
+                "World Travel_09.gif",
+                "World Travel_10.gif",
+                "World Travel_11.gif",
+                "World Travel_12.gif",
+                "World Travel_13.jpg",
+                "World Travel_14.jpg",
+                "World Travel_15.jpg",
+                "World Travel_16.jpg",
+                "World Travel_17.jpg",
+                "World Travel_18.jpg",
+                "World Travel_19.jpg",
+                "World Travel_20.jpg",
+                "World Travel_21.jpg",
+                "World Travel_22.jpg",
+                "World Travel_23.jpg",
+                "World Travel_24.jpg",
+                "World Travel_25.jpg",
+                "World Travel_26.jpg",
+                "World Travel_27.jpg",
+                "World Travel_28.jpg",
+                "World Travel_29.jpg",
+                "World Travel_30.jpg",
+                "World Travel_31.jpg",
+                "World Travel_32.jpg",
+                "World Travel_33.jpg",
+                "World Travel_34.jpg",
+                "World Travel_35.PNG",
+                "World Travel_36.PNG",
+                "World Travel_37.PNG",
+                "World Travel_38.gif",
+                "World Travel_39.gif",
+                "World Travel_40.gif",
+                "World Travel_41.gif",
+                "World Travel_42.gif"
+            ]
+        },
+
+        casual: {
+            video: null,
+            role: "개인 작업 (Personal Artwork)",
+            desc: `Isometric Daily Spaces
+
+As a media artist and 3D motion graphics designer, I'm constantly exploring the intersection between everyday experiences and imaginative worlds. "Isometric Daily Spaces" represents my personal journey through the environments where I spend most of my time and wish to linger longer. Each scene is a carefully crafted miniature world within the Panda Universe—transforming familiar spaces like cafes, creative studios, and gyms into stylized 3D narratives.
+
+Through isometric design and stylized rendering techniques, I blur the boundaries between reality and fantasy, creating spaces that feel both intimate and dreamlike. Every element, from lighting to color palette, reflects the warm and playful identity that defines the Panda Universe aesthetic. This collection showcases not just technical precision in 3D modeling, but a design philosophy: that the most meaningful art emerges from the spaces we call home.
+
+This project shows six daily spaces from my routine. These are places where I spend most of my time or want to spend more time. Each space is created with isometric 3D style to represent different parts of my day.
+
+미디어 아티스트이자 3D 모션그래픽 디자이너로서, 저는 일상의 경험과 상상의 세계가 만나는 지점을 탐구합니다.
+
+"Isometric Daily Spaces"는 제가 실제로 많은 시간을 보내고, 더 오래 머물고 싶은 공간들에 대한 개인적인 여정을 담았습니다. 각 씬은 판다유니버스 안에서 정교하게 제작된 미니어처 세계로, 카페, 창작 스튜디오, 헬스장 같은 익숙한 공간들을 스타일라이즈드 3D 내러티브로 변환했습니다.
+
+아이소메트릭 디자인과 스타일라이즈드 렌더링 기법을 통해 현실과 판타지의 경계를 흐리며, 친밀하면서도 몽환적인 공간들을 창조했습니다. 조명부터 컬러 팔레트까지 모든 요소는 판다유니버스 미학을 정의하는 따뜻하고 유쾌한 아이덴티티를 반영합니다.
+
+이 컬렉션은 3D 모델링의 기술적 정밀함뿐만 아니라, 하나의 디자인 철학을 보여줍니다: 가장 의미 있는 예술은 우리가 '집'이라고 부르는 공간에서 탄생한다는 것입니다.
+
+제 일상 루틴에서 나온 6가지 공간을 보여주는 프로젝트입니다. 제가 가장 많은 시간을 보내거나 더 많은 시간을 보내고 싶은 장소들입니다. 각 공간은 아이소메트릭 3D 스타일로 제작했습니다.`,
+            folder: "Personal/25.07_casual",
+            images: [
+                "casual_02.png",
+                "casual_03.png",
+                "casual_04.png",
+                "casual_05.png",
+                "casual_06.png",
+                "casual_07.png",
+                "casual_08.png",
+                "casual_09.png",
+                "casual_10.png",
+                "casual_11.png",
+                "casual_12.png",
+                "casual_13.png",
+                "casual_14.png",
+                "casual_15.png",
+                "casual_16.png"
+            ]
+        },
+        key_creativity: {
+            video: "zkKS_xdVRxg",
+            role: "개인 작업 (Personal Artwork)",
+            desc: `This project started with a desire to do things that I wanted to do. I worked on it based on the keywords I wanted, such as machines, metals, robots, explosions, and freedom, and aimed at producing dense cuts from any angle.
+
+평소에 해보고 싶던 작업들을 해보고 싶은 욕심에서 시작한 프로젝트 입니다. 기계, 금속, 로봇, 폭발, 자유 등 원하는 키워드를 토대로 진행했으며, 어느 각도에서도 밀도 있는 컷이 나오는 것에 목적을 두고 작업했습니다.`,
+            folder: "Personal/24.12_Personal Title Sequence (Key to creativity)",
+            images: [
+                "Key to creativity_01.png",
+                "Key to creativity_02.gif",
+                "Key to creativity_03.gif",
+                "Key to creativity_04.gif",
+                "Key to creativity_05.gif",
+                "Key to creativity_06.gif",
+                "Key to creativity_07.gif",
+                "Key to creativity_08.gif",
+                "Key to creativity_09.gif",
+                "Key to creativity_11.png",
+                "Key to creativity_12.png",
+                "Key to creativity_13.png",
+                "Key to creativity_14.png",
+                "Key to creativity_15.png",
+                "Key to creativity_16.png",
+                "Key to creativity_17.png",
+                "Key to creativity_18.png",
+                "Key to creativity_19.png",
+                "Key to creativity_20.png",
+                "Key to creativity_21.png",
+                "Key to creativity_22.png",
+                "Key to creativity_23.png",
+                "Key to creativity_24.png",
+                "Key to creativity_25.png",
+                "Key to creativity_26.png",
+                "Key to creativity_27.png",
+                "Key to creativity_28.png",
+                "Key to creativity_29.png",
+                "unnamed.jpg"
+            ]
+        },
+
+        car_drive: {
+            video: "TLYGn5Se8sQ",
+            role: "AI 포트폴리오 (Sora × Genspark Cinematic Experience)",
+            desc: "AI Generated Lamborghini | Sora × Genspark Cinematic Experience\n\nSora와 Genspark를 활용한 AI 기반 시네마틱 자동차 비주얼 포트폴리오입니다.",
+            folder: "Personal/25.07_car_drive",
+            images: Array.from({ length: 17 }, (_, i) => `car_drive_${String(i + 1).padStart(2, '0')}.gif`)
+        },
+
+        musical_artwork: {
+    videos: [
+        "Oo3iJvMze04",
+        "U79DwsSRwbA",
+        "L_ZkFZvBC90",
+        "Or7iBGOZysw",
+        "KtlUyH_JE2w",
+        "BQ6zKudFWpc"
+    ],
+    videoLayout: "grid-2",
+    role: "AI 포트폴리오 (Musical Artwork Collection)",
+    desc: `Musical Artwork Collection
+
+A collection of AI artworks inspired by ambient music.
+
+Visual interpretations of everyday moments and peaceful atmospheres.
+
+앰비언트 음악을 들으며 떠오른 이미지들을 담은 개인 컬렉션입니다.`,
+    images: []
+},
+
+ai_source: {
+    video: null,
+    role: "AI 소스 아카이브 (AI Only)",
+    desc: `AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 아카이브입니다.
+
+생성형 이미지와 모션 기반 결과물을 모아, 비주얼 스타일 탐색과 확장 가능성을 보여주는 별도 컬렉션입니다.`,
+    folder: "Personal/AI_source",
+   images: [
+    "06.gif",
+    "06_1.gif",
+    "07.gif",
+    "07_1.gif",
+    "08.gif",
+    "08_1.gif",
+    "01.gif",
+    "02.gif",
+    "03.gif",
+    "04.gif",
+    "05.gif"
+]
+},
+
+        ai_flower: {
+            video: null,
+            role: "AI 포트폴리오 (Visual Series)",
+            desc: "A Flower Holds Light\n\n빛을 품은 꽃의 이미지를 중심으로 전개한 AI 비주얼 시리즈입니다.",
+            folder: "Personal/24.05_ai_flower",
+            images: [
+                "ai_flower_01.gif",
+                "ai_flower_02.gif",
+                "ai_flower_03.gif",
+                "ai_flower_04.gif",
+                "ai_flower_05.gif",
+                "ai_flower_06.gif",
+                "ai_flower_07.gif",
+                "ai_flower_08.gif",
+                "ai_flower_09.gif",
+                "ai_flower_10.gif",
+                "ai_flower_11.gif",
+                "ai_flower_12.gif",
+                "ai_flower_13.gif",
+                "ai_flower_14.gif",
+                "ai_flower_17.gif",
+                "ai_flower_18.gif",
+                "ai_flower_19.gif",
+                "ai_flower_20.gif",
+                "ai_flower_21.gif",
+                "ai_flower_22.gif",
+                "ai_flower_23.gif",
+                "ai_flower_24.gif",
+                "ai_flower_25.gif",
+                "ai_flower_26.gif",
+                "ai_flower_27.gif",
+                "ai_flower_28.gif",
+                "ai_flower_29.gif",
+                "ai_flower_30_2.gif",
+                "ai_flower_31_2.gif",
+                "ai_flower_32_2.gif",
+                "ai_flower_33.gif"
+            ]
+        }
+    };
+
+    let ytPlayers = [];
+    let ytApiRequested = false;
+
+    function destroyYouTubePlayers() {
+        ytPlayers.forEach(player => {
+            try { player.destroy(); } catch (e) {}
+        });
+        ytPlayers = [];
+    }
+
+    function bindYouTubePlayers() {
+        if (!(window.YT && window.YT.Player)) return;
+
+        ytPlayers = [];
+        const frames = document.querySelectorAll('#videoContainer iframe[data-youtube-player="true"]');
+
+        frames.forEach(frame => {
+            const player = new YT.Player(frame, {
+                events: {
+                    onStateChange: function (event) {
+                        if (event.data === YT.PlayerState.PLAYING) {
+                            ytPlayers.forEach(otherPlayer => {
+                                if (otherPlayer !== player) {
+                                    try { otherPlayer.pauseVideo(); } catch (e) {}
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+            ytPlayers.push(player);
+        });
+    }
+
+    function ensureYouTubeAPI() {
+        if (window.YT && window.YT.Player) {
+            bindYouTubePlayers();
+            return;
+        }
+
+        if (!ytApiRequested) {
+            ytApiRequested = true;
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            document.head.appendChild(tag);
+        }
+    }
+
+    window.onYouTubeIframeAPIReady = function () {
+        bindYouTubePlayers();
+    };
+
+    function resetAllModals() {
+        const projectModal = document.getElementById('projectModal');
+        const aiModal = document.getElementById('aiModal');
+        const aiFrame = document.getElementById('aiFrame');
+        const videoContainer = document.getElementById('videoContainer');
+        const imageContainer = document.getElementById('projectImages');
+        const specialContainer = document.getElementById('specialTextContainer');
+
+        destroyYouTubePlayers();
+
+        videoContainer.innerHTML = '';
+        videoContainer.className = '';
+
+        imageContainer.innerHTML = '';
+        imageContainer.style.gridTemplateColumns = '';
+
+        specialContainer.innerHTML = '';
+
+        aiFrame.src = '';
+
+        projectModal.style.display = 'none';
+        aiModal.style.display = 'none';
+
+        document.body.style.overflow = 'auto';
+    }
+
+    function openProject(type) {
+        const modal = document.getElementById('projectModal');
+        const videoContainer = document.getElementById('videoContainer');
+        const imageContainer = document.getElementById('projectImages');
+        const roleText = document.getElementById('projectRole');
+        const descText = document.getElementById('projectDesc');
+        const specialContainer = document.getElementById('specialTextContainer');
+        const roleTitle = document.getElementById('roleTitle');
+        const descTitle = document.getElementById('descTitle');
+
+        resetAllModals();
+
+        const data = projectData[type];
+        if (!data) return;
+
+if (type === 'casual' || type === 'world_travel') {
+    imageContainer.style.gridTemplateColumns = '1fr';
+}
+
+if (type === 'ai_source') {
+    imageContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+}
+
+
+
+
+        if (data.videoLayout === 'grid-2') {
+            videoContainer.classList.add('video-grid-2');
+        }
+
+        if (data.embedVideos && data.embedVideos.length > 0) {
+            let hasYouTubeEmbed = false;
+
+            data.embedVideos.forEach((url, i) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'video-box';
+
+                const isYouTube = url.includes('youtube.com/embed/');
+                let finalUrl = url;
+
+                if (isYouTube) {
+                    hasYouTubeEmbed = true;
+
+                    if (!finalUrl.includes('enablejsapi=')) {
+                        finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                    }
+                    if (!finalUrl.includes('rel=')) {
+                        finalUrl += '&rel=0';
+                    }
+                    if (!finalUrl.includes('autoplay=')) {
+                        finalUrl += `&autoplay=${i === 0 ? 1 : 0}`;
+                    }
+                }
+
+                wrapper.innerHTML = `
+                    <iframe
+                        ${isYouTube ? 'data-youtube-player="true"' : ''}
+                        width="100%"
+                        height="100%"
+                        src="${finalUrl}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                        allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                `;
+                videoContainer.appendChild(wrapper);
+            });
+
+            if (hasYouTubeEmbed) {
+                ensureYouTubeAPI();
+            }
+
+        } else if (data.videos && data.videos.length > 0) {
+            data.videos.forEach((vid, i) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'video-box';
+                wrapper.innerHTML = `
+                    <iframe
+                        data-youtube-player="true"
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/${vid}?autoplay=${i === 0 ? 1 : 0}&enablejsapi=1&rel=0"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                `;
+                videoContainer.appendChild(wrapper);
+            });
+
+            ensureYouTubeAPI();
+
+        } else if (data.video) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'video-box';
+            wrapper.innerHTML = `
+                <iframe
+                    data-youtube-player="true"
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/${data.video}?autoplay=1&enablejsapi=1&rel=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            `;
+            videoContainer.appendChild(wrapper);
+            ensureYouTubeAPI();
+        }
+
+       const personalTypes = [
+    'multiple',
+    'golden',
+    'odyssey',
+    'particles',
+    'world_travel',
+    'casual',
+    'key_creativity',
+    'car_drive',
+    'musical_artwork',
+    'ai_flower',
+    'ai_source'
+];
+
+
+        if (personalTypes.includes(type)) {
+            roleTitle.innerText = '프로젝트 유형';
+            descTitle.innerText = '프로젝트 설명';
+        } else {
+            roleTitle.innerText = '참여 업무';
+            descTitle.innerText = '제작 기획';
+        }
+
+        roleText.innerText = data.role || '';
+        descText.innerText = data.desc || '';
+
+        if (data.special) {
+            const block = document.createElement('div');
+            block.className = 'special-text-block';
+            block.innerHTML = `<h5>${data.special.title}</h5><p>${data.special.content}</p>`;
+            specialContainer.appendChild(block);
+        }
+
+        if (data.extraVideos && data.extraVideos.length > 0) {
+            const videoBlock = document.createElement('div');
+            videoBlock.className = 'special-text-block';
+            videoBlock.innerHTML = `
+                <h5>추가 참여 영상</h5>
+                <div class="extra-video-grid">
+                    ${data.extraVideos.map(item => `
+                        <div class="extra-video-item">
+                            <iframe
+                                src="${item.url.replace('watch?v=', 'embed/')}"
+                                title="${item.title}"
+                                loading="lazy"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                            <div class="extra-video-caption">${item.title}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            specialContainer.appendChild(videoBlock);
+        }
+
+       (data.images || []).forEach((fileName, index) => {
+    const img = document.createElement('img');
+    img.src = `images/${data.folder}/${fileName}`;
+    img.loading = 'lazy';
+    img.alt = `${type} still ${index + 1}`;
+
+    if (fileName.includes('Purpool Party_03')) {
+        img.style.gridColumn = '1 / -1';
+    }
+
+    if (type === 'key_creativity' && [0, 3, 7].includes(index)) {
+        img.style.gridColumn = '1 / -1';
+    }
+
+  if (type === 'particles' && [0, 1].includes(index)) {
+    img.style.gridColumn = '1 / -1';
+}
+
+if (
+    type === 'multiple' &&
+    (
+        fileName.includes('00_title') ||
+        fileName.includes('01_floor') ||
+        fileName.includes('01_will')
+    )
+) {
+    img.style.gridColumn = '1 / -1';
+}
+
+imageContainer.appendChild(img);
+
+
+    });
+
+
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProject() {
+        resetAllModals();
+    }
+
+    function openAIModal(url) {
+        const aiModal = document.getElementById('aiModal');
+        const aiFrame = document.getElementById('aiFrame');
+
+        resetAllModals();
+
+        aiFrame.src = url;
+        aiModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAIModal() {
+        resetAllModals();
+    }
+</script>
+
+
+
+
+            
+
+<footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
+
+</body>
+</html>
