@@ -843,13 +843,14 @@
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#works">Works</a>
-    <a href="#ai">AI</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    <a href="javascript:void(0)" onclick="showMainTab('about')">About</a>
+    <a href="javascript:void(0)" onclick="showMainTab('works')">Works</a>
+    <a href="javascript:void(0)" onclick="showMainTab('ai')">AI</a>
+    <a href="javascript:void(0)" onclick="showAILabTab()" style="color: var(--accent-color);">AI Lab</a>
+    <a href="javascript:void(0)" onclick="showMainTab('experience')">Experience</a>
+    <a href="#contact" onclick="showMainTab('contact')">Contact</a>
 </nav>
-
+<div id="mainContent">
 <section class="hero">
     <div class="hero-video-container">
         <iframe src="https://www.youtube.com/embed/7qYDcnBwBlo?autoplay=1&mute=1&loop=1&playlist=7qYDcnBwBlo&controls=0&modestbranding=1&rel=0" frameborder="0"></iframe>
@@ -1229,7 +1230,26 @@
         </div>
     </div>
 </section>
-
+<div id="aiLabContent" style="display: none;">
+    <div class="ai-lab-header">
+        <h1>AI LAB</h1>
+        <p>AI Source Archive<br>AI만으로 제작한 비주얼 소스와 실험 결과물을 정리한 독립 아카이브입니다.</p>
+    </div>
+    
+    <div class="ai-lab-gallery">
+        <img src="images/Personal/AI_source/06.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/06_1.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/07.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/07_1.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/08.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/08_1.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/01.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/02.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/03.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/04.gif" alt="AI Source" loading="lazy">
+        <img src="images/Personal/AI_source/05.gif" alt="AI Source" loading="lazy">
+    </div>
+</div>
 <div id="projectModal" class="full-modal" onclick="closeProject()">
     <div class="modal-inner" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="closeProject()">CLOSE</span>
@@ -1940,6 +1960,26 @@ imageContainer.appendChild(img);
     function closeAIModal() {
         resetAllModals();
     }
+function showMainTab(targetId) {
+    document.getElementById('aiLabContent').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+
+    if (targetId) {
+        setTimeout(() => {
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 10);
+    }
+}
+
+    function showAILabTab() {
+        resetAllModals(); 
+        document.getElementById('mainContent').style.display = 'none';
+        document.getElementById('aiLabContent').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
 </script>
 
 
@@ -1948,6 +1988,6 @@ imageContainer.appendChild(img);
             
 
 <footer style="padding: 40px; text-align: center; opacity: 0.1; font-size: 0.7rem;">&copy; 2026 LEE DEOK JUN.</footer>
-
+</div>
 </body>
 </html>
